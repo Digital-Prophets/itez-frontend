@@ -1,10 +1,10 @@
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 import { Meta } from '../layout/Meta';
 import { Main } from '../templates/Main';
 
 const Index = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <Main
@@ -15,28 +15,14 @@ const Index = () => {
         />
       }
     >
-      <a href="https://github.com/Digital-Prophets/itez-frontend">
-        <img
-          src={`${router.basePath}/assets/images/nextjs-starter-banner.png`}
-          alt="Nextjs starter banner"
-        />
-      </a>
-      <h1 className="font-bold text-2xl">
-        Boilerplate code for your Nextjs project with Tailwind CSS
-      </h1>
       <p>
         <span role="img" aria-label="rocket">
           🚀
         </span>{' '}
-        A platform for comprehensive data management of intersex and trans-persons in Zambia .{' '}
-        <span role="img" aria-label="zap">
-          ⚡️
-        </span>{' '}
-        Made with Next.js, TypeScript, ESLint, Prettier, Husky, Lint-Staged,
-        VSCode, Netlify, PostCSS, Tailwind CSS.
+        A platform for comprehensive data management of intersex and
+        trans-persons in Zambia . <span role="img" aria-label="zap"></span>{' '}
       </p>
-      <h2 className="font-semibold text-lg">ITEZ Features</h2>
-      <p>Developer experience first:</p>
+      <h2 className="font-semibold text-lg">ITEZ Frontend Stack and configs</h2>
       <ul>
         <li>
           <span role="img" aria-label="fire">
@@ -123,20 +109,11 @@ const Index = () => {
           </a>
         </li>
         <li>
-          <span role="img" aria-label="rainbow">
-            🌈
-          </span>{' '}
-          Include a FREE minimalist theme
-        </li>
-        <li>
           <span role="img" aria-label="hundred">
             💯
           </span>{' '}
           Maximize lighthouse score
         </li>
-      </ul>
-      <p>Built-in feature from Next.js:</p>
-      <ul>
         <li>
           <span role="img" aria-label="coffee">
             ☕
@@ -156,28 +133,6 @@ const Index = () => {
           Cache busting
         </li>
       </ul>
-      <h2 className="font-semibold text-lg">Our Stater code Philosophy</h2>
-      <ul>
-        <li>Minimal code</li>
-        <li>SEO-friendly</li>
-        <li>
-          <span role="img" aria-label="rocket">
-            🚀
-          </span>{' '}
-          Production-ready
-        </li>
-      </ul>
-      <p>
-        Check our GitHub project for more information about{' '}
-        <a href="https://github.com/saleor/saleor-storefront">
-          Nextjs Boilerplate
-        </a>
-        . You can also browse our{' '}
-        <a href="http://127.0.0.1:3000/">
-          Premium NextJS Templates
-        </a>{' '}
-        Currently the URL takes you to your local environment.
-      </p>
     </Main>
   );
 };
