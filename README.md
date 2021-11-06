@@ -1,8 +1,8 @@
 # ITEZ - Frontend
 
-🚀 A Frontend microservice platform for a comprehensive data management of intersex and trans-persons in Zambia.
+A Frontend microservice platform for a comprehensive data management of intersex and trans-persons in Zambia.
 
-### Features
+### Stack
 
 ITEZ Frontend stack composition:
 
@@ -22,6 +22,7 @@ ITEZ Frontend stack composition:
 - ☕ Minify HTML & CSS
 - 💨 Live reload
 - ✅ Cache busting
+- 🚀 Docker for stack bootstrapping
 
 ### Requirements
 
