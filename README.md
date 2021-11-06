@@ -86,7 +86,8 @@ For VSCode, you can have a better integration with VSCode by installing the sugg
 
 Pro tips: if you need a project wide type checking with TypeScript, you can run a build with <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>B</kbd> on Mac.
 
-### Contributions
+### [Contributions](CONTRIBUTORS.rst)
+
 
 Everyone is welcome to contribute to the ITEZ project. Feel free to open an issue if you have question or found a bug.
 
