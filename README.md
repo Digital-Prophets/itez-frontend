@@ -115,6 +115,6 @@ See [LICENSE](LICENSE) for more information.
 
 ---
 
-Made with ♥ by [Digital-Prophets](https://digitpro.com)
+Made with ♥ by [Digital-Prophets](http://digiprophets.com)
 
 [![Sponsor itez](https://cdn.buymeacoffee.com/buttons/default-red.png)](https://www.buymeacoffee.com/Digital-Prophets)
