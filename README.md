@@ -34,6 +34,21 @@ Run the following command on your local environment:
 ```
 git clone https://github.com/Digital-Prophets/itez-frontend.git
 cd itez-frontend
+```
+
+Run with docker and docker-compose in a single command below
+
+```
+docker-compose up --build
+```
+The above command will build and start the frontend service with live reload enabled.
+
+Open http://localhost:3000 with your favorite browser to see the project.
+
+
+Or manually you will need to first install all packages
+
+```
 npm install
 ```
 
