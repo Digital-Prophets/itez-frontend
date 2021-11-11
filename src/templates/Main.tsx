@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import Link from 'next/link';
 
+import Sidebar from '../pages/sidebar';
 import { AppConfig } from '../utils/AppConfig';
 
 type IMainProps = {
@@ -13,6 +14,7 @@ const Main = (props: IMainProps) => (
   <div className="antialiased w-full text-gray-700">
     {props.meta}
 
+    <Sidebar />
     <div className="max-w-screen-md mx-auto">
       <div className="border-b border-gray-300">
         <div className="pt-16 pb-8">

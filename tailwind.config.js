@@ -41,6 +41,15 @@ module.exports = {
         },
       },
     },
+    backgroundColor: (theme) => ({
+      ...theme('colors'),
+
+      primary: '#5988C0',
+
+      secondary: '#ffed4a',
+
+      danger: '#e3342f',
+    }),
   },
   variants: {},
   plugins: [],
