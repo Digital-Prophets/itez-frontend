@@ -44,11 +44,12 @@ module.exports = {
     backgroundColor: (theme) => ({
       ...theme('colors'),
 
-      primary: '#5988C0',
+      primary: '#A9C9D4',
 
       secondary: '#ffed4a',
 
       danger: '#e3342f',
+      grad: '',
     }),
   },
   variants: {},
