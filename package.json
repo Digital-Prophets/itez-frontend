@@ -14,16 +14,20 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
+    "@mui/material": "^5.1.0",
+    "@tailwindcss/aspect-ratio": "^0.3.0",
+    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/typography": "^0.4.1",
+    "dotenv": "^10.0.0",
+    "dotenv-cli": "^4.1.0",
     "next": "^12.0.2",
     "next-seo": "^4.28.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled-jsx-plugin-postcss": "^4.0.1",
-    "dotenv": "^10.0.0",
-    "dotenv-cli": "^4.1.0",
-    "@tailwindcss/aspect-ratio": "^0.3.0",
-    "@tailwindcss/forms": "^0.3.4",
-    "@tailwindcss/typography": "^0.4.1"
+    "react-icons": "^4.3.1",
+    "styled-jsx-plugin-postcss": "^4.0.1"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^12.0.2",
