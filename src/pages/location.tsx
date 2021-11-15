@@ -6,11 +6,11 @@ import { Main } from '../templates/Main';
 
 const Location = () => (
   <Main meta={<Meta title="ITEZ" description="ITEZ Frontend" />}>
-    <div className="bg-primary h-screen">
+    <div className=" h-screen">
       {' '}
       <div className="flex  flex-col  w-full h-full ">
         <div className={styles.grad}>
-          <div className="p-16">
+          <div className="">
             <h1>Location</h1>
             <div className="flex ">
               <Image

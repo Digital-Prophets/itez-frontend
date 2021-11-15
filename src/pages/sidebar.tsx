@@ -15,18 +15,13 @@ const Sidebar = () => {
         style: { verticalAlign: 'middle', marginRight: '0.5rem' },
       }}
     >
-      <div className=" top-0 left-0  w-64 m-0 h-screen inline-flex flex-col bg-primary text-black shadow-lg ">
-        <i className="-ml-16 ">
+      <div className=" top-0 left-0  w-80 m-0 h-screen inline-flex flex-col bg-primary text-black shadow-lg ">
+        <i className="-ml-16 z-10">
           {' '}
-          <Image
-            className=" z-10 "
-            src="/undp-logo.svg"
-            width={300}
-            height={100}
-          />
+          <Image src="/undp-logo.svg" width={300} height={100} />
         </i>
 
-        <ul className="px-16 pt-4 text-base text-black">
+        <ul className="px-10 pt-4 text-base text-black">
           <Link href="dashboard">
             <li className="cursor-pointer my-6  flex items-center">
               <GrPieChart />
@@ -65,18 +60,15 @@ const Sidebar = () => {
           </Link>
         </ul>
 
-        <h2 className="mx-5 font-bold">System</h2>
-        <ul className=" text-base text-black px-16">
-          <Link href="/settings">
-            <li className="cursor-pointer my-6  flex items-center ">
-              {' '}
-              <MdSettings /> Settings{' '}
-            </li>
-          </Link>
+        <h2 className="mx-5 font-bold flex items-center">
+          <MdSettings />
+          System Settings
+        </h2>
+        <ul className=" text-base text-black px-10">
           <Link href="/users/">
             <li className="cursor-pointer my-6  flex items-center">
               {' '}
-              <IoMdPerson /> Users
+              <IoMdPerson /> User Management
             </li>
           </Link>
         </ul>

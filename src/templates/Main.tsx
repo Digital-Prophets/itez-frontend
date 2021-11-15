@@ -11,9 +11,10 @@ const Main = (props: IMainProps) => (
   <div className="flex ">
     {props.meta}
     <Sidebar />
+    {/* <Header /> */}
     <div className="w-full ">
       {' '}
-      <div className=" h-full text-xl content ">{props.children}</div>
+      <div className=" h-full text-xl content p-16 ">{props.children}</div>
     </div>
   </div>
 );

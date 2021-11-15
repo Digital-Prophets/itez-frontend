@@ -3,7 +3,10 @@ import { Main } from '../templates/Main';
 
 const Occupation = () => (
   <Main meta={<Meta title="ITEZ" description="ITEZ Frontend" />}>
-    <div> occupation works</div>
+    <div>
+      {' '}
+      <h2>Work Details</h2>
+    </div>
   </Main>
 );
 export default Occupation;
