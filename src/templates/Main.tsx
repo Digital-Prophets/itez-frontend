@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
-import Link from 'next/link';
-
-import { AppConfig } from '../utils/AppConfig';
+import Footer from '../components/Footer/Footer';
+import Header from '../components/Headers/Header';
+import Sidebar from '../components/SideBar/Sidebar';
 
 type IMainProps = {
   meta: ReactNode;
@@ -10,63 +10,15 @@ type IMainProps = {
 };
 
 const Main = (props: IMainProps) => (
-  <div className="antialiased w-full text-gray-700">
+  <div className="flex">
     {props.meta}
 
-    <div className="max-w-screen-md mx-auto">
-      <div className="border-b border-gray-300">
-        <div className="pt-16 pb-8">
-          <div className="font-bold text-3xl text-gray-900">
-            {AppConfig.title}
-          </div>
-          <div className="text-xl">{AppConfig.description}</div>
-        </div>
-        <div>
-          <ul className="flex flex-wrap text-xl">
-            <li className="mr-6">
-              <Link href="/">
-                <a className="text-gray-700 border-none hover:text-gray-900">
-                  Home
-                </a>
-              </Link>
-            </li>
-            <li className="mr-6">
-              <Link href="/about/">
-                <a className="text-gray-700 border-none hover:text-gray-900">
-                  About
-                </a>
-              </Link>
-            </li>
-            <li className="mr-6">
-              <a
-                className="text-gray-700 border-none hover:text-gray-900"
-                href="https://github.com/Digital-Prophets/itez-frontend"
-              >
-                GitHub
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+    <Sidebar />
+    <div className="w-full">
+      <Header />
+      <div className="h-full ">{props.children}</div>
 
-      <div className="py-5 text-xl content">{props.children}</div>
-
-      <div className="border-t border-gray-300 text-center py-8 text-sm">
-        © Copyright {new Date().getFullYear()} {AppConfig.title}. Made with{' '}
-        <span role="img" aria-label="Love">
-          ♥
-        </span>{' '}
-        by{' '}
-        <a href="https://github.com/Digital-Prophets/itez-frontend">
-          Digital-Prophets
-        </a>
-        {/*
-         * PLEASE READ THIS SECTION
-         * We'll really appreciate if you could have a link to our website
-         * The link doesn't need to appear on every pages, one link on one page is enough.
-         * Thank you for your support it'll mean a lot for us.
-         */}
-      </div>
+      <Footer />
     </div>
   </div>
 );
