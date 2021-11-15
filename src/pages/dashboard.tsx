@@ -1,9 +1,16 @@
+import LineChart from '../components/lineChart';
 import { Meta } from '../layout/Meta';
 import { Main } from '../templates/Main';
 
 const Dashboard = () => (
   <Main meta={<Meta title="Dash" description="dash" />}>
-    <p>Dash works</p>
+    <div>
+      <h2>Overview</h2>
+
+      <div>
+        <LineChart />
+      </div>
+    </div>
   </Main>
 );
 

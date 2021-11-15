@@ -7,6 +7,8 @@ import { GrPieChart } from 'react-icons/gr';
 import { IoMdPerson, IoIosPeople } from 'react-icons/io';
 import { MdLocationPin, MdHomeWork, MdSettings } from 'react-icons/md';
 
+import sideBarlogo from '../assets/undp-logo-side.svg';
+
 const Sidebar = () => {
   return (
     <IconContext.Provider
@@ -16,9 +18,8 @@ const Sidebar = () => {
       }}
     >
       <div className=" top-0 left-0  w-80 m-0 h-screen inline-flex flex-col bg-primary text-black shadow-lg ">
-        <i className="-ml-16 z-10">
-          {' '}
-          <Image src="/undp-logo.svg" width={300} height={100} />
+        <i>
+          <Image src={sideBarlogo} />
         </i>
 
         <ul className="px-10 pt-4 text-base text-black">

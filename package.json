@@ -21,11 +21,13 @@
     "@tailwindcss/aspect-ratio": "^0.3.0",
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/typography": "^0.4.1",
+    "chart.js": "^3.6.0",
     "dotenv": "^10.0.0",
     "dotenv-cli": "^4.1.0",
     "next": "^12.0.2",
     "next-seo": "^4.28.1",
     "react": "^17.0.2",
+    "react-chartjs-2": "^3.3.0",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "styled-jsx-plugin-postcss": "^4.0.1"
