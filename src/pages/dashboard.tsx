@@ -1,4 +1,4 @@
-import LineChart from '../components/lineChart';
+import LineChart from '../components/LineChart';
 import { Meta } from '../layout/Meta';
 import { Main } from '../templates/Main';
 

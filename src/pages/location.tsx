@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 import { Meta } from '../layout/Meta';
-import styles from '../styles/location.module.css';
 import { Main } from '../templates/Main';
 
 const Location = () => (
@@ -9,7 +8,7 @@ const Location = () => (
     <div className=" h-screen">
       {' '}
       <div className="flex  flex-col  w-full h-full ">
-        <div className={styles.grad}>
+        <div className="">
           <div className="">
             <h1>Location</h1>
             <div className="flex ">
