@@ -9,10 +9,10 @@ import {
   IoIosPeople, 
   IoMdLaptop, 
   IoMdConstruct, 
-  IoMdJournal, 
+  IoMdBook, 
   IoMdBookmarks 
   } from 'react-icons/io';
-  
+
 import { MdLocationPin, MdHomeWork, MdSettings } from 'react-icons/md';
 
 import sidebarlogo from '../../assets/undp-logo-side.png';
@@ -103,7 +103,7 @@ const Sidebar = () => {
           <a target="_blank" href="http://localhost:8000/swagger" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
             <li className="cursor-pointer my-6  flex items-center">
               {' '}
-              <IoMdJournal /> API Interactive UI
+              <IoMdBook /> API Interactive UI
             </li>
           </a>
           <a target="_blank" href="http://localhost:8000" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
