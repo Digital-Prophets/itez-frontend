@@ -1,6 +1,6 @@
 import React from 'react';
 import {NextPage} from "next";
-import Pagination from "../../components/Pagintion";
+import Pagination from "../../components/Pagination";
 import {Props} from "../../types";
 
 
