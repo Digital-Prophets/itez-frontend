@@ -13,26 +13,16 @@ export default function CardStatisticsItem({
 }: IStatistics) {
   return (
     <>
-      <div className="bg-white rounded shadow border p-6 w-64">
-        <h6 className="text-3xl font-bold mb-4 mt-0">{title}</h6>
-        <p className="text-gray-700 text-sm">{value}</p>
-        <Icon className="h-10" />
-      </div>
-      {/* <div className="grid-flow-col flex flex-col gap-4  overflow-hidden rounded-lg shadow-2xl ">
-        <div className="py-3 px-8 ">
-          <div className="">
-            <h4 className="mb-3 text-xl font-semibold tracking-tight text-gray-800">
-              {title}
-            </h4>
-          </div>
-          <div className="">
-            <p className="leading-normal text-gray-700">{value}</p>
-          </div>
-          <div className="">
-            <Icon className="h-8 mb-1 group-hover:animate-bounce" />
+      <div className="transform hover:scale-105 cursor-pointer transition delay-100 w-3/12  p-2 py-4 shadow-xl  border rounded-xl bg-gradient-to-r">
+        <div className="flex justify-between">
+          <div></div>
+          <div className=" w-10  h-10 flex items-center justify-center  bg-gray-300 rounded-xl m-1  bg-opacity-30">
+            {Icon}
           </div>
         </div>
-      </div> */}
+        <p className="text-black text-md  ">{title}</p>
+        <p className="text-black text-lg  font-semibold  ">{value}</p>
+      </div>
     </>
   );
 }
