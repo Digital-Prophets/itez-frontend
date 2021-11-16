@@ -1,11 +1,7 @@
 import React, { Fragment } from 'react';
 
 import { Menu, Transition } from '@headlessui/react';
-import {
-  ChevronDownIcon,
-  LogoutIcon,
-  UserIcon,
-} from '@heroicons/react/outline';
+import { LogoutIcon, UserIcon } from '@heroicons/react/outline';
 
 const SettingsDropdownMenu = () => {
   return (
@@ -18,11 +14,6 @@ const SettingsDropdownMenu = () => {
                 Bupe Mulenga
               </span>
             </span>
-
-            <ChevronDownIcon
-              className="w-6 h-6 ml-1 -mr-1 text-blue-500"
-              aria-hidden="true"
-            />
           </Menu.Button>
         </div>
         <Transition
