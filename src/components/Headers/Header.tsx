@@ -4,12 +4,12 @@ import SettingsDropdownMenu from './SettingsDropdownMenu';
 export default function Header() {
   return (
     <div className="flex shadow-sm p-4 justify-end">
-      <div className="flex flex-col items-center space-x-4 text-gray-400 mr-3">
-        <SettingsDropdownMenu />
+      <div className="flex flex-col items-center space-x-4 text-gray-400 mr-2">
+        <NotificationDropdownMenu />
       </div>
 
       <div className="flex flex-col items-center space-x-4 text-gray-400">
-        <NotificationDropdownMenu />
+        <SettingsDropdownMenu />
       </div>
     </div>
   );
