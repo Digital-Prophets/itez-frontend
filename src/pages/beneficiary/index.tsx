@@ -2,14 +2,20 @@ import React from 'react';
 import {NextPage} from "next";
 import Pagination from "../../components/Pagination";
 import {Props} from "../../types";
-
+import {CheckIcon} from '@heroicons/react/solid'
 
 
 const BeneficiaryTable: NextPage<Props> = ({data}) => {
   const {results, count} = data;
     return (
+      <>
+      <div className="flex justify-end">
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-5 mr-8 rounded">
+          Add Beneficiary
+        </button>
+      </div>
       <div className="main-content flex flex-col flex-grow p-4">
-        <h1 className="font-bold text-2xl text-gray-700">Beneficiaries</h1>
+        <h1 className="font-bold text-2xl text-gray-700 mb-3">Beneficiaries</h1>
         <div className="flex flex-col">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -78,6 +84,7 @@ const BeneficiaryTable: NextPage<Props> = ({data}) => {
         <Pagination />
       </div>
     </div>
+    </>
     )
 }
 
