@@ -1,11 +1,9 @@
 import React from 'react';
 
-import Registration from './auth/registration';
-
-export default function registration() {
+export default function Login() {
   return (
     <div>
-      <Registration />
+      <Login />
     </div>
   );
 }
