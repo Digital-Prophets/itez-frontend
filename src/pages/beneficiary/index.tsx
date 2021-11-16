@@ -1,10 +1,12 @@
 import React from 'react';
-import Pagination from "../../components/Pagintion"
+import {NextPage} from "next";
+import Pagination from "../../components/Pagintion";
+import {Props} from "../../types";
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URI
 
-export default function Beneficiary({data}) {
-  const {results, count} = data
+
+const BeneficiaryTable: NextPage<Props> = ({data}) => {
+  const {results, count} = data;
     return (
       <div className="main-content flex flex-col flex-grow p-4">
         <h1 className="font-bold text-2xl text-gray-700">Beneficiaries</h1>
@@ -80,6 +82,7 @@ export default function Beneficiary({data}) {
 }
 
 export async function getStaticProps() {
+  const BASE_URL = process.env.NEXT_PUBLIC_API_URI
   const res = await fetch(`${BASE_URL}/beneficiaries`)
   const data = await res.json()
 
@@ -89,3 +92,5 @@ export async function getStaticProps() {
     },
   }
 }
+
+export default BeneficiaryTable;
