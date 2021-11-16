@@ -4,6 +4,7 @@ import { NextPage } from 'next';
 
 import Pagination from '../../components/Pagination';
 import { Props } from '../../types';
+import { config } from  '../../config';
 
 const BeneficiaryTable: NextPage<Props> = ({ data }) => {
   const { results } = data;
@@ -101,7 +102,7 @@ const BeneficiaryTable: NextPage<Props> = ({ data }) => {
 };
 
 export async function getStaticProps() {
-  const BASE_URL = process.env.ITEZ_API_URI;
+  const BASE_URL = config.ITEZ_API_URI;
   const res = await fetch(`${BASE_URL}/beneficiaries`);
   const data = await res.json();
 
