@@ -1,3 +1,6 @@
+// In here we throw in regulary common html tags without strict types and tag them with type any
+// This silences the linter and type checker in general.
+
 import * as m from "mithril";
 
 declare global {
