@@ -1,11 +1,28 @@
 import { NextPage } from 'next';
-
+import useSWR from 'swr';
+import Spinner from '../../components/Spinner';
 import Pagination from '../../components/Pagination';
+import WorkDetailTable from '../../components/Beneficiary/WorkDetailTable';
 import { config } from '../../config';
-import { Props } from '../../types/workDetail';
 
-const WorkDetails: NextPage<Props> = ({ data }) => {
-  const { results } = data;
+const dataFetcher = (url: string) => fetch(url).then(res => res.json())
+
+
+function fetchWorkDetailData () {
+  const BASE_URL = config.ITEZ_API_URI;
+  const { data, error } = useSWR(`${BASE_URL}/work_detail`, dataFetcher)
+
+  return {
+    data: data,
+    isLoading: !error && !data,
+    isError: error
+  }
+}
+
+const WorkDetails: NextPage = () => {
+
+  const {data, isLoading} = fetchWorkDetailData();
+
   return (
     <>
       <div className="flex justify-end">
@@ -19,78 +36,16 @@ const WorkDetails: NextPage<Props> = ({ data }) => {
           <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
               <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                      >
-                        Gross Pay
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                      >
-                        Company
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                      >
-                        Company Address
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                      >
-                        Is company insured?
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {results.map((work_detail) => (
-                      <tr key={work_detail.id}>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-500">
-                            {work_detail.gross_pay}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-500">
-                            {work_detail.company}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {work_detail.work_address}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {work_detail.insured ? <p>Yes</p> : <p>No</p>}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                {isLoading ? <Spinner /> : data ? <WorkDetailTable data={data}/> : <h2 className="font-bold">An Error occured while fetching data.</h2>}
+                <Pagination />
               </div>
             </div>
           </div>
-          <Pagination />
         </div>
       </div>
     </>
   );
 };
 
-export async function getStaticProps() {
-  const BASE_URL = config.ITEZ_API_URI;
-  const res = await fetch(`${BASE_URL}/work_detail`);
-  const data = await res.json();
-
-  return {
-    props: {
-      data,
-    },
-  };
-}
 
 export default WorkDetails;
