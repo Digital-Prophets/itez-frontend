@@ -14,10 +14,6 @@ const Main = (props: IMainProps) => (
     {props.meta}
     <Sidebar />
     <div className="w-full">
-      <Header />
-      <div className="h-full ">{props.children}</div>
-
-      <Sidebar />
       <div className="w-full">
         <Header />
         <div className="h-full ">{props.children}</div>

@@ -1,11 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import { NextPage } from 'next';
+import useSWR from "swr";
 
-import { config } from '../../config';
-import { Props } from '../../types/agents';
+import { config } from "../../config";
 
-const AgentsTable: NextPage<Props> = ({ agents }) => {
+const fetcher = (url: any) => fetch(url).then((res) => res.json());
+
+const AgentsTable = () => {
+  const BASE_URL = config.ITEZ_API_URI;
+  const { data } = useSWR(`${BASE_URL}/agents`, fetcher);
+
   return (
     <>
       <div className="flex justify-end">
@@ -69,44 +73,48 @@ const AgentsTable: NextPage<Props> = ({ agents }) => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {agents.map((agent) => (
-                      <tr key={agent.id}>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-500">
-                            {agent.agend_ID}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-500">
-                            {agent.first_name}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-500">
-                            {agent.last_name}
-                          </div>
-                        </td>
+                    {data ? (
+                      data.map((agent: any) => (
+                        <tr key={agent.id}>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <div className="text-sm text-gray-500">
+                              {agent.agend_ID}
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <div className="text-sm text-gray-500">
+                              {agent.first_name}
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <div className="text-sm text-gray-500">
+                              {agent.last_name}
+                            </div>
+                          </td>
 
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-500">
-                            {agent.birthdate}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-500">
-                            {agent.gender}
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {agent.location}
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-4 mr-8 rounded">
-                            edit
-                          </button>
-                        </td>
-                      </tr>
-                    ))}
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <div className="text-sm text-gray-500">
+                              {agent.birthdate}
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <div className="text-sm text-gray-500">
+                              {agent.gender}
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {agent.location}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-4 mr-8 rounded">
+                              edit
+                            </button>
+                          </td>
+                        </tr>
+                      ))
+                    ) : (
+                      <p>ERROR!!!!</p>
+                    )}
                   </tbody>
                 </table>
               </div>
@@ -117,17 +125,5 @@ const AgentsTable: NextPage<Props> = ({ agents }) => {
     </>
   );
 };
-
-export async function getStaticProps() {
-  const BASE_URL = config.ITEZ_API_URI;
-  const res = await fetch(`${BASE_URL}/agents/`);
-  const agents = await res.json();
-
-  return {
-    props: {
-      agents,
-    },
-  };
-}
 
 export default AgentsTable;
