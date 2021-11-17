@@ -7,11 +7,11 @@ import imageRight from '../assets/analysis.svg';
 import imageLeft from '../assets/lgbt.svg';
 import logo from '../assets/logo.png';
 
-export default function SignUp() {
+export default function SignIn() {
   return (
     <>
       <Head>
-        <title>SignUp</title>
+        <title>SignIn</title>
       </Head>
       <div
         style={{
@@ -31,7 +31,7 @@ export default function SignUp() {
           id="whoobe-t7qyk"
           className="justify-center items-center w-full shadow bg-white px-6 flex flex-col md:w-1/2 lg:w-1/3 m-auto h-3/5"
         >
-          <h2 className="text-2xl my-4">welcome</h2>
+          <h2 className="text-2xl my-4">Welcome</h2>
           <div
             id="whoobe-h90kl"
             className="w-full p-2 justify-start flex flex-col"
