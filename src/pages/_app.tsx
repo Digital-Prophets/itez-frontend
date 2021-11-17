@@ -1,12 +1,12 @@
-import type { ReactNode } from 'react';
-import React from 'react';
+import type { ReactNode } from "react";
+import React from "react";
 
-import type { NextPage } from 'next';
-import { AppProps } from 'next/app';
+import type { NextPage } from "next";
+import { AppProps } from "next/app";
 
-import '../styles/main.css';
-import { Meta } from '../layout/Meta';
-import { Main } from '../templates/Main';
+import "../styles/main.css";
+import { Meta } from "../layout/Meta";
+import { Main } from "../templates/Main";
 
 type Page<P = {}> = NextPage<P> & {
   getLayout?: (page: ReactNode) => ReactNode;
@@ -19,7 +19,7 @@ type Props = AppProps & {
 function App({ Component, pageProps }: Props) {
   const getLayout = Component.getLayout ?? ((page: ReactNode) => page);
   return getLayout(
-    <div className="grad w-screen">
+    <div className="grad">
       <Main meta={<Meta title="ITEZ" description="" />}>
         <Component {...pageProps} />
       </Main>

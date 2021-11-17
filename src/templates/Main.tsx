@@ -17,6 +17,11 @@ const Main = (props: IMainProps) => (
       <Header />
       <div className="h-full ">{props.children}</div>
 
+    <Sidebar />
+    <div className="w-full">
+      <Header />
+      <div className="h-full ">{props.children}</div>
+
       <Footer />
     </div>
   </div>
