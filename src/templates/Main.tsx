@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
 
-import Sidebar from '../pages/sidebar';
+import Footer from '../components/Footer/Footer';
+import Header from '../components/Headers/Header';
+import Sidebar from '../components/SideBar/Sidebar';
 
 type IMainProps = {
   meta: ReactNode;
@@ -8,14 +10,14 @@ type IMainProps = {
 };
 
 const Main = (props: IMainProps) => (
-  <div className="flex ">
+  <div className="flex">
     {props.meta}
     <Sidebar />
-    {/* <Header /> */}
+    <div className="w-full">
+      <Header />
+      <div className="h-full ">{props.children}</div>
 
-    <div className="w-full ">
-      {' '}
-      <div className=" h-full text-xl content p-16 ">{props.children}</div>
+      <Footer />
     </div>
   </div>
 );

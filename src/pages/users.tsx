@@ -1,10 +1,11 @@
-import { Meta } from '../layout/Meta';
-import { Main } from '../templates/Main';
+import React from 'react';
 
-const Users = () => (
-  <Main meta={<Meta title="ITEZ" description="ITEZ Frontend" />}>
-    <p>Users works!!</p>
-  </Main>
-);
+export default function Users() {
+  return (
+    <div className="main-content flex flex-col flex-grow p-4">
+      <h1 className="font-bold text-2xl text-gray-700">Users</h1>
 
-export default Users;
+      <div className="flex flex-col flex-grow border-4 border-gray-400 border-dashed bg-white rounded mt-4"></div>
+    </div>
+  );
+}

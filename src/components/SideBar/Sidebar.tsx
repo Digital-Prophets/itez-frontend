@@ -7,7 +7,7 @@ import { GrPieChart } from 'react-icons/gr';
 import { IoMdPerson, IoIosPeople } from 'react-icons/io';
 import { MdLocationPin, MdHomeWork, MdSettings } from 'react-icons/md';
 
-import sideBarlogo from '../assets/undp-logo-side.svg';
+import sidebarlogo from '../../assets/undp-logo-side.png';
 
 const Sidebar = () => {
   return (
@@ -19,7 +19,8 @@ const Sidebar = () => {
     >
       <div className=" top-0 left-0 sticky w-80 m-0 h-screen inline-flex flex-col bg-primary text-black shadow-lg ">
         <i>
-          <Image src={sideBarlogo} />
+          {' '}
+          <Image className="" src={sidebarlogo} />
         </i>
 
         <ul className="px-10 pt-4 text-base text-black">
@@ -70,6 +71,12 @@ const Sidebar = () => {
             <li className="cursor-pointer my-6  flex items-center">
               {' '}
               <IoMdPerson /> User Management
+            </li>
+          </Link>
+          <Link href="/registration/">
+            <li className="cursor-pointer my-6  flex items-center">
+              {' '}
+              <IoMdPerson /> Registration
             </li>
           </Link>
         </ul>

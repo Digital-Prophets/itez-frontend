@@ -1,35 +1,11 @@
-import Image from 'next/image';
+import React from 'react';
 
-import { Meta } from '../layout/Meta';
-import { Main } from '../templates/Main';
+export default function location() {
+  return (
+    <div className="main-content flex flex-col flex-grow p-4">
+      <h1 className="font-bold text-2xl text-gray-700">Location</h1>
 
-const Location = () => (
-  <Main meta={<Meta title="ITEZ" description="ITEZ Frontend" />}>
-    <div className=" h-screen">
-      {' '}
-      <div className="flex  flex-col  w-full h-full ">
-        <div className="">
-          <div className="">
-            <h1>Location</h1>
-            <div className="flex ">
-              <Image
-                className=" justify-center z-10 "
-                src="/map.svg"
-                width={900}
-                height={600}
-              />
-            </div>
-            <ul>
-              <li>Lat/Long: -15, 30 </li>
-              <li>Province: Lusaka</li>
-              <li>District: Chongwe</li>
-              <li>Service Area: Chongwe</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <div className="flex flex-col flex-grow border-4 border-gray-400 border-dashed bg-white rounded mt-4"></div>
     </div>
-  </Main>
-);
-
-export default Location;
+  );
+}
