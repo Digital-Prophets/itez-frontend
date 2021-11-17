@@ -4,7 +4,7 @@ import useSWR from "swr";
 
 import { config } from "../../config";
 
-const fetcher = (url: any) => fetch(url).then((res) => res.json());
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const AgentsTable = () => {
   const BASE_URL = config.ITEZ_API_URI;
