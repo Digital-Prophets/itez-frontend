@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
-import Footer from '../components/Footer/Footer';
-import Header from '../components/Headers/Header';
-import Sidebar from '../components/SideBar/Sidebar';
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Headers/Header";
+import Sidebar from "../components/SideBar/Sidebar";
 
 type IMainProps = {
   meta: ReactNode;
@@ -17,12 +17,13 @@ const Main = (props: IMainProps) => (
       <Header />
       <div className="h-full ">{props.children}</div>
 
-    <Sidebar />
-    <div className="w-full">
-      <Header />
-      <div className="h-full ">{props.children}</div>
+      <Sidebar />
+      <div className="w-full">
+        <Header />
+        <div className="h-full ">{props.children}</div>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   </div>
 );
