@@ -3,7 +3,15 @@ import React from 'react';
 import Link from 'next/link';
 import { IconContext } from 'react-icons';
 import { GrPieChart } from 'react-icons/gr';
-import { IoMdPerson, IoIosPeople } from 'react-icons/io';
+import { 
+  IoMdPerson, 
+  IoIosPeople, 
+  IoMdLaptop, 
+  IoMdConstruct, 
+  IoMdBook, 
+  IoMdBookmarks 
+  } from 'react-icons/io';
+
 import { MdLocationPin, MdHomeWork, MdSettings } from 'react-icons/md';
 
 // import sidebarlogo from '../../assets/undp-logo-side.png';
@@ -78,6 +86,31 @@ const Sidebar = () => {
               <IoMdPerson /> Registration
             </li>
           </Link>
+        </ul>
+
+        <h2 className="mx-5 font-bold flex items-center">
+          <IoMdLaptop />
+          Data Admin
+        </h2>
+        <ul className=" text-base text-black px-10">
+          <a target="_blank" href="http://localhost:8000/admin" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <li className="cursor-pointer my-6  flex items-center">
+              {' '}
+              <IoMdConstruct /> Admin UI
+            </li>
+          </a>
+          <a target="_blank" href="http://localhost:8000/swagger" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <li className="cursor-pointer my-6  flex items-center">
+              {' '}
+              <IoMdBook /> API Interactive UI
+            </li>
+          </a>
+          <a target="_blank" href="http://localhost:8000" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <li className="cursor-pointer my-6  flex items-center">
+              {' '}
+              <IoMdBookmarks /> API Documentation
+            </li>
+          </a>
         </ul>
       </div>{' '}
     </IconContext.Provider>
