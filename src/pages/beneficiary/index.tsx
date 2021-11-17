@@ -3,7 +3,7 @@ import React from 'react';
 import { NextPage } from 'next';
 
 import Pagination from '../../components/Pagination';
-import { Props } from '../../types';
+import { Props } from '../../types/beneficiary';
 import { config } from  '../../config';
 
 const BeneficiaryTable: NextPage<Props> = ({ data }) => {
