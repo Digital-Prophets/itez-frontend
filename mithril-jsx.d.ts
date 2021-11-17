@@ -1,5 +1,5 @@
-// In here we throw in regulary common html tags without strict types and tag them with type any
-// This silences the linter and type checker in general.
+// In here we throw in regulary common html tags without strict type anotations and tag them with type any
+// This silences the linter and type checker in general on all  unnecesary common tag names.
 
 import * as m from "mithril";
 
