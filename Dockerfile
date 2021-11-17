@@ -4,6 +4,9 @@ WORKDIR /app
 
 COPY . /app
 
-RUN npm install && npm cache clean --force
+
+RUN npm config set registry="http://registry.npmjs.org/"  && \
+    npm install && \
+    npm cache clean --force
 
 ENV PATH ./node_modules/.bin/:$PATH
