@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Occupation() {
   return (
     <div className="main-content flex flex-col flex-grow p-4">
