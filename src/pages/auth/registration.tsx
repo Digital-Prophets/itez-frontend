@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { LockClosedIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 

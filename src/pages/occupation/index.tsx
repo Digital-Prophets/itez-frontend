@@ -1,10 +1,8 @@
-import React from 'react';
-
 import { NextPage } from 'next';
 
 import Pagination from '../../components/Pagination';
-import { config } from  '../../config';
-import { Props } from "../../types/workDetail"
+import { config } from '../../config';
+import { Props } from '../../types/workDetail';
 
 const WorkDetails: NextPage<Props> = ({ data }) => {
   const { results } = data;
