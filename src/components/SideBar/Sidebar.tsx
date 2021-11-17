@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { IconContext } from 'react-icons';
 import { GrPieChart } from 'react-icons/gr';
@@ -15,7 +14,7 @@ import {
 
 import { MdLocationPin, MdHomeWork, MdSettings } from 'react-icons/md';
 
-import sidebarlogo from '../../assets/undp-logo-side.png';
+// import sidebarlogo from '../../assets/undp-logo-side.png';
 
 const Sidebar = () => {
   return (
@@ -26,10 +25,10 @@ const Sidebar = () => {
       }}
     >
       <div className=" top-0 left-0 sticky w-80 m-0 h-screen inline-flex flex-col bg-primary text-black shadow-lg ">
-        <i>
+        {/* <i>
           {' '}
-          <Image className="" src={sidebarlogo} />
-        </i>
+          <Image className="" src="/../assets/unLogo.png" />
+        </i> */}
 
         <ul className="px-10 pt-4 text-base text-black">
           <Link href="dashboard">

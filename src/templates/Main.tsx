@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
 import Footer from '../components/Footer/Footer';
-import Header from '../components/Headers/Header';
-import Sidebar from '../components/SideBar/Sidebar';
+// import Header from '../components/Headers/Header';
+// import Sidebar from '../components/SideBar/Sidebar';
 
 type IMainProps = {
   meta: ReactNode;
@@ -13,9 +13,9 @@ const Main = (props: IMainProps) => (
   <div className="flex">
     {props.meta}
 
-    <Sidebar />
+    {/* <Sidebar /> */}
     <div className="w-full">
-      <Header />
+      {/* <Header /> */}
       <div className="h-full ">{props.children}</div>
 
       <Footer />
