@@ -1,5 +1,3 @@
-import exp from "constants"
-
 const Spinner = () => {
     return (
     <div className="flex justify-center">
