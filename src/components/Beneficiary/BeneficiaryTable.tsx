@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Link from 'next/link'
 
 import { Props } from '../../types/beneficiary';
 
@@ -47,12 +48,16 @@ const BeneficiaryTable: NextPage<Props> = ({ data }) => {
                 <td className="px-6 py-4 whitespace-nowrap">
                     <div className="flex items-center">
                     <div className="ml-4">
-                        <div className="text-sm font-medium text-gray-900">
-                        {person.first_name} {person.last_name}
-                        </div>
-                        <div className="text-sm text-gray-500">
-                        {person.email}
-                        </div>
+                        <Link href="#">
+                            <a>
+                                <div className="text-sm font-medium">
+                                    {person.first_name} {person.last_name}
+                                </div>
+                                <div className="text-sm text-gray-500">
+                                    {person.email}
+                                </div>
+                            </a>
+                        </Link>
                     </div>
                     </div>
                 </td>

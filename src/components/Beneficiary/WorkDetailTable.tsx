@@ -1,4 +1,6 @@
 import { NextPage } from 'next';
+import Link from 'next/link'
+
 import { Props } from "../../types/workDetail";
 
 
@@ -12,13 +14,7 @@ const WorkDetailTable: NextPage<Props> = ({data}) => {
                 scope="col"
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                 >
-                First Name
-            </th>
-            <th
-                scope="col"
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                Last Name
+                Full Name
             </th>
             <th
                 scope="col"
@@ -54,39 +50,42 @@ const WorkDetailTable: NextPage<Props> = ({data}) => {
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
         {data.results?.map((work_detail) => (
-            <tr key={work_detail.id}>
-                <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-500">
-                {work_detail.beneficiary.first_name}
-                </div>
+        <tr key={work_detail.id}>
+            <td className="px-6 py-4 whitespace-nowrap">
+                <Link href="#">
+                    <a>
+                        <div className="text-sm">
+                            {work_detail.beneficiary.first_name} {work_detail.beneficiary.last_name}
+                        </div>
+                    </a>
+                </Link>
             </td>
             <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-500">
-                {work_detail.beneficiary.last_name}
-                </div>
-            </td>
-            <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-500">
+                <div className="text-sm">
                 {work_detail.beneficiary.beneficiary_ID}
                 </div>
             </td>
             <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-500">
+                <div className="text-sm">
                 {work_detail.gross_pay}
                 </div>
             </td>
             <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-500">
+                <div className="text-sm ">
                 {work_detail.company}
                 </div>
             </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm ">
                 {work_detail.work_address}
+                </div>
             </td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                {work_detail.insured ? <p>Yes</p> : <p>No</p>}
+            <td className="px-6 py-4 whitespace-nowrap">
+                <div className="text-sm ">
+                    {work_detail.insured ? <p>Yes</p> : <p>No</p>}
+                </div>
             </td>
-            </tr>
+        </tr>
         ))}
         </tbody>
     </table>
