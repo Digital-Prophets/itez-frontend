@@ -7,6 +7,25 @@ interface QueriedData {
   previous: string | null;
   results: Beneficiary[];
 }
+export interface UserProps {
+  data: QueriedData;
+}
+
+interface QueriedData {
+  count: number;
+  next: string;
+  previous: string | null;
+  userResults: User[];
+}
+
+export interface User {
+  id: number;
+  first_name: string;
+  last_name: string;
+  role: string;
+  phone_number: number;
+  email: string;
+}
 
 export interface Beneficiary {
   id: number;
