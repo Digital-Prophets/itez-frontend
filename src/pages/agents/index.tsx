@@ -3,12 +3,22 @@ import React from "react";
 import useSWR from "swr";
 
 import { config } from "../../config";
+import Spinner from "../../components/Spinner";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const AgentsTable = () => {
-  // const BASE_URL = config.ITEZ_API_URI;
-  const { data } = useSWR("http://localhost:8000/api/agents", fetcher);
+  const BASE_URL = config.ITEZ_API_URI;
+  const { data, error } = useSWR(`${BASE_URL}/agents`, fetcher);
+
+  if (error)
+    return (
+      <div>
+        <h2 className="font-bold text-center">
+          Error has accured while fetching data!!
+        </h2>
+      </div>
+    );
 
   return (
     <>
@@ -113,7 +123,9 @@ const AgentsTable = () => {
                         </tr>
                       ))
                     ) : (
-                      <p>ERROR!!!!</p>
+                      <p className="flex justify-center justify-items-center">
+                        <Spinner />
+                      </p>
                     )}
                   </tbody>
                 </table>
