@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { IoMdWoman, IoMdPeople, IoMdMan, IoMdAlbums } from 'react-icons/io';
 
 import CardStatisticsItem from './CardStatisticsItem';

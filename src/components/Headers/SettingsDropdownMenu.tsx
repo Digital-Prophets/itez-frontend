@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
 
 import { Menu, Transition } from '@headlessui/react';
 import { LogoutIcon, UserIcon } from '@heroicons/react/outline';
@@ -10,7 +10,7 @@ const SettingsDropdownMenu = () => {
         <div>
           <Menu.Button className="inline-flex justify-center w-full px-4 py-2 rounded-md ">
             <span className="flex flex-col ml-2 h-full">
-              <span className="truncate w-30 text-black font-semibold tracking-wide leading-none">
+              <span className="w-30 text-black font-semibold tracking-wide leading-none">
                 Bupe Mulenga
               </span>
             </span>

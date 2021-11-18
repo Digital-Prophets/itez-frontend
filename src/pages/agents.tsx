@@ -1,5 +1,3 @@
-import React from 'react';
-
 const beneficiaries = [
   {
     agentId: 1,
@@ -30,7 +28,7 @@ const beneficiaries = [
     location: 'Chipata',
   },
 ];
-export default function Beneficiary() {
+export default function Agents() {
   return (
     <div className="main-content flex flex-col flex-grow p-4">
       <h1 className="font-bold text-2xl text-gray-700">Agents</h1>
