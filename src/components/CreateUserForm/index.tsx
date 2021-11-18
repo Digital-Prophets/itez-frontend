@@ -1,6 +1,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { headers } from "../../utils/Headers"
 import fetchData from "../../utils/fetcherHelper"
+import postData from "../../utils/postHelper"
 import { config } from  '../../config';
 
 type FormValues = {
@@ -14,19 +15,11 @@ type FormValues = {
 const CreateUserForm = () => {
   const { register, handleSubmit } = useForm<FormValues>();
 
-  const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    const BASE_URL = process.env.ITEZ_API_URI;
+  const onSubmit: SubmitHandler<FormValues> = async (formData) => {
 
-    try {
-      const res = await fetch(`${BASE_URL}/user`, {
-        body: JSON.stringify(data),
-        headers: headers,
-        method: 'POST',
-      });
-      const result = await res.json();
-    } catch (error) {
-      console.log(error);
-    }
+    const { data } = postData('users/create', formData);
+    console.log(data);
+    
   };
 
   const { data } = fetchData('roles');
