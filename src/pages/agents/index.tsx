@@ -7,8 +7,8 @@ import { config } from "../../config";
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const AgentsTable = () => {
-  const BASE_URL = config.ITEZ_API_URI;
-  const { data } = useSWR(`${BASE_URL}/agents`, fetcher);
+  // const BASE_URL = config.ITEZ_API_URI;
+  const { data } = useSWR("http://localhost:8000/api/agents", fetcher);
 
   return (
     <>
