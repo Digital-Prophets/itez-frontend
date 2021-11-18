@@ -9,7 +9,7 @@ const NotificationDropdownMenu = () => {
     <div>
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="inline-flex justify-center w-full px-4 py-2 rounded-md ">
+          <Menu.Button className="inline-flex justify-center w-full px-4 py-2 rounded-md">
             <IoMdNotifications
               className="w-6 h-6 ml-1 -mr-1 text-gray-800"
               aria-hidden="true"
@@ -25,7 +25,7 @@ const NotificationDropdownMenu = () => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute z-10 right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="px-1 py-1 ">
               <Menu.Item>
                 {({ active }) => (

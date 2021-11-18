@@ -2,7 +2,6 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { headers } from "../../utils/Headers"
 import fetchData from "../../utils/fetcherHelper"
 import postData from "../../utils/postHelper"
-import { config } from  '../../config';
 
 type FormValues = {
   firstName: string;
@@ -94,7 +93,7 @@ const CreateUserForm = () => {
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-6 mt-4 sm:grid-cols-2">
             <div className="mt-4">
               <label
                 className="text-gray-700 dark:text-gray-200"
@@ -109,8 +108,19 @@ const CreateUserForm = () => {
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none shadow"
               />
             </div>
-          </div>
-
+              <div className="bg-gray-50 mt-8  border-4 border-solid">
+                <div className="flex items-center justify-center w-full cursor-pointer  px-4 py-2">
+                    <label className="flex flex-col w-full hover:bg-gray-100 hover:border-gray-300 ">
+                        <div className="flex flex-col items-center justify-center">
+                      
+                            <p className="text-sm tracking-wider text-gray-800 group-hover:text-gray-600">
+                                <input type="file" className="opacity-8 border-none" /></p>
+                        </div>
+                        
+                    </label>
+                </div> 
+              </div>
+            </div>
           <div className="flex items-center justify-center mt-8">
             <button
               type="submit"
