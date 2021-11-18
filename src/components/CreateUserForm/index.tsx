@@ -1,4 +1,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { headers } from "../../utils/Headers"
+import fetchData from "../../utils/fetcherHelper"
+import { config } from  '../../config';
 
 type FormValues = {
   firstName: string;
@@ -17,17 +20,16 @@ const CreateUserForm = () => {
     try {
       const res = await fetch(`${BASE_URL}/user`, {
         body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: headers,
         method: 'POST',
       });
       const result = await res.json();
-      console.log(result);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const { data } = fetchData('roles');
 
   return (
     <>
@@ -81,9 +83,7 @@ const CreateUserForm = () => {
                 className="block w-full px-4 py-3 mt-2 text-gray-700 bg-white border border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none shadow"
               >
                 <option value="">Select role</option>
-                <option value="role-5">Agent</option>
-                <option value="role-4">Admin</option>
-                <option value="role-3">Client</option>
+                {data?.map((role: any)=>(<><option value={role.name}>{role.name}</option></>))}
               </select>
             </div>
             <div>
