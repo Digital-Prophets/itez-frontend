@@ -9,7 +9,7 @@ export default function Header() {
       <div className="flex flex-col items-center space-x-4 text-gray-400 ">
         <SearchBar />
       </div>
-      <div className="flex flex-col items-center space-x-4 text-gray-400 mr-2">
+      <div className="flex flex-col items-center space-x-4 text-gray-400 ">
         <NotificationDropdownMenu />
       </div>
 

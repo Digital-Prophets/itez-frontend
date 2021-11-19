@@ -85,13 +85,6 @@ const Sidebar = () => {
               <IoMdPerson /> Registration
             </li>
           </Link>
-
-          <Link href="/userprofile/">
-            <li className="cursor-pointer my-6  flex items-center">
-              {" "}
-              <CgProfile /> User Profile
-            </li>
-          </Link>
         </ul>
 
         <h2 className="mx-5 font-bold flex items-center">
