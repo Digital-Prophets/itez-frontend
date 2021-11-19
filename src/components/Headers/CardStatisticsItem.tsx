@@ -24,7 +24,7 @@ export default function CardStatisticsItem({
         </div>
 
         <div className="text-center">
-          <p className="text-base text-gray-800 font-bold">{value}</p>
+          <p className="text-3xl text-gray-800 font-bold ">{value}</p>
         </div>
       </div>
     </>

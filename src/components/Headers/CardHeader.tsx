@@ -1,6 +1,6 @@
-import { IoMdWoman, IoMdPeople, IoMdMan, IoMdAlbums } from 'react-icons/io';
+import { IoMdWoman, IoMdPeople, IoMdMan, IoMdAlbums } from "react-icons/io";
 
-import CardStatisticsItem from './CardStatisticsItem';
+import CardStatisticsItem from "./CardStatisticsItem";
 
 const CardHeader = () => {
   return (
