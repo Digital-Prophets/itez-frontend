@@ -1,3 +1,4 @@
+import BeneficiaryGraphs from '../components/Graphs/BeneficiaryGraphs';
 import CardHeader from '../components/Headers/CardHeader';
 
 export default function Dashboard() {
@@ -8,6 +9,7 @@ export default function Dashboard() {
       <div className="flex flex-col flex-grow rounded mt-2">
         <CardHeader />
       </div>
+      <BeneficiaryGraphs />
     </div>
   );
 }
