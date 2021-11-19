@@ -38,7 +38,7 @@ const UserProfile = () => {
                         Username
                       </label>
                       <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="rounded overflow-hidden shadow-lg border w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="text"
                         value="john.deo"
                       />
@@ -49,7 +49,7 @@ const UserProfile = () => {
                         Email Address
                       </label>
                       <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="rounded overflow-hidden shadow-lg border w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="email"
                         value="john.deo@mail.com"
                       />
@@ -62,7 +62,7 @@ const UserProfile = () => {
                         First Name
                       </label>
                       <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="rounded overflow-hidden shadow-lg border w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="text"
                         value="john"
                       />
@@ -72,7 +72,7 @@ const UserProfile = () => {
                         Last Name
                       </label>
                       <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="rounded overflow-hidden shadow-lg border w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="text"
                         value="deo"
                       />
@@ -88,7 +88,7 @@ const UserProfile = () => {
                         Address
                       </label>
                       <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="rounded overflow-hidden shadow-lg border w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="text"
                         value="woodlands plot number 323123"
                       />
@@ -101,7 +101,7 @@ const UserProfile = () => {
                         Province
                       </label>
                       <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="rounded overflow-hidden shadow-lg border w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="text"
                         value="lusaka"
                       />
@@ -111,7 +111,7 @@ const UserProfile = () => {
                         City
                       </label>
                       <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="rounded overflow-hidden shadow-lg border w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="text"
                         value="lusaka"
                       />
@@ -122,7 +122,7 @@ const UserProfile = () => {
                         Postal code
                       </label>
                       <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="rounded overflow-hidden shadow-lg border w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         type="text"
                         value="10101"
                       />
@@ -138,7 +138,7 @@ const UserProfile = () => {
                         About Me
                       </label>
                       <textarea
-                        className="shadow appearance-none border rounded w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="rounded overflow-hidden shadow-lg border  w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         value="this is john deo,  i'm being used as a placeholder text"
                       />
                     </div>
@@ -147,7 +147,7 @@ const UserProfile = () => {
               </form>
             </div>
           </div>
-          <div className="bg-white  w-96 rounded overflow-hidden shadow-lg h-96 ml-8">
+          <div className="bg-white  w-1/4 rounded overflow-hidden shadow-lg h-96 ml-8">
             <div className="cont p-8">
               <div className="flex  justify-between ">
                 <button className="bg-blue-500 hover:bg-blue-700 text-white p-2 rounded w-18">
@@ -167,16 +167,16 @@ const UserProfile = () => {
                 <div className="flex justify-around p-8">
                   <div className="text-center">
                     <p>40</p>
-                    <p className="font-light">Stats</p>
+                    <p className="font-extralight">Stats</p>
                   </div>
                   <div className="text-center">
                     <p>20</p>
-                    <p className="font-light">Photos</p>
+                    <p className="font-extralight">Photos</p>
                   </div>
                   <div className="flex flex-col text-center justify-items-center">
                     {" "}
                     <p>50</p>
-                    <p className="font-light">Stats 2</p>
+                    <p className="font-extralight">Stats 2</p>
                   </div>
                 </div>
 
