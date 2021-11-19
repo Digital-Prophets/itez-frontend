@@ -147,7 +147,7 @@ const UserProfile = () => {
                   </button>
                 </div>
                 <IconContext.Provider value={{ size: "90", color: "#c0c0c0" }}>
-                  <div className="profile flex justify-center -mt-28 z-10 bg-white rounded-full p-2">
+                  <div className=" z-10 bg-white rounded-full p-2 absolute top-ten left-sv">
                     <BsPersonCircle />
                   </div>
                 </IconContext.Provider>
