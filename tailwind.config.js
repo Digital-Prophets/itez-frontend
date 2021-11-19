@@ -17,7 +17,7 @@ module.exports = {
     }, minHeight: {
       '0': '0',
       '1/4': '25%',
-      'ct':'30.5rem',
+      'ct':'20.5rem',
       '1/2': '50%',
       '3/4': '75%',
       'full': '100%',
@@ -54,6 +54,9 @@ module.exports = {
           800: '#2c5282',
           900: '#2a4365',
         },
+        black:{
+          1:'#2C3E50',
+        }
       },
     },
     backgroundColor: (theme) => ({
