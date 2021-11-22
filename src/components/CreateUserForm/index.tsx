@@ -15,7 +15,8 @@ const CreateUserForm = () => {
 
   const onSubmit: SubmitHandler<FormValues> = async (formData) => {
     const { data } = postData("users/create", formData);
-    console.log(data);};
+    console.log(data);
+  };
 
   const { data } = fetchData("roles");
 

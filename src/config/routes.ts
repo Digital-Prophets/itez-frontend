@@ -26,7 +26,7 @@ const routes: IRoutes[] = [
     exact: true,
   },
   {
-    path: "/occuoation",
+    path: "/occupation",
     name: "Occupation Page",
     component: Occupation,
     exact: true,
@@ -44,13 +44,13 @@ const routes: IRoutes[] = [
     exact: true,
   },
   {
-    path: "/auth/login",
+    path: "/user/login",
     name: "Login Page",
     component: "User Management Component",
     exact: true,
   },
   {
-    path: "/auth/registration",
+    path: "/user/registration",
     name: "User Management Page",
     component: "User Management Component",
     exact: true,

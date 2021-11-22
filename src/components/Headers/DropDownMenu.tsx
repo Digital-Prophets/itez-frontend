@@ -10,7 +10,7 @@ function MyLink(props: any) {
   );
 }
 
-function DropDownMenu() {
+export default function DropDownMenu() {
   return (
     <div>
       <Menu>
@@ -32,5 +32,3 @@ function DropDownMenu() {
     </div>
   );
 }
-
-export default DropDownMenu;

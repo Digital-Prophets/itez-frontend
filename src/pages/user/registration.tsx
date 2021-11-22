@@ -30,7 +30,7 @@ export default function Registration() {
   };
 
   return (
-    <div className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ">
+    <div className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ">
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-2 justify-center">
         <div className="mb-6">
           <div className="flex justify-center">

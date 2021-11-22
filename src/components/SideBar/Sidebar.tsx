@@ -19,7 +19,7 @@ const Sidebar = () => {
         style: { verticalAlign: "middle", marginRight: "0.5rem" },
       }}
     >
-      <div className=" top-0 left-0 sticky w-80 m-0 h-screen inline-flex flex-col bg-primary text-black shadow-lg ">
+      <div className=" top-0 left-0 sticky w-80 m-0 inline-flex flex-col bg-primary text-black shadow-lg ">
         <i> {/* <Image className="" src={sidebarlogo} /> */}</i>
 
         <ul className="px-10 pt-4 text-base text-black">

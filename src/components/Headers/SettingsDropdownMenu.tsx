@@ -1,9 +1,13 @@
-import { Fragment } from 'react';
+import { Fragment } from "react";
 
-import { Menu, Transition } from '@headlessui/react';
-import { LogoutIcon, UserIcon } from '@heroicons/react/outline';
+import { Menu, Transition } from "@headlessui/react";
+import { LogoutIcon, UserIcon } from "@heroicons/react/outline";
+
+import { useContext } from "react";
+import AuthContext from "../../context/authContext";
 
 const SettingsDropdownMenu = () => {
+  const { logout } = useContext(AuthContext);
   return (
     <div>
       <Menu as="div" className="relative inline-block text-left">
@@ -31,7 +35,7 @@ const SettingsDropdownMenu = () => {
                 {({ active }) => (
                   <button
                     className={`${
-                      active ? 'bg-violet-500 text-blue-500' : 'text-gray-900'
+                      active ? "bg-violet-500 text-blue-500" : "text-gray-900"
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                   >
                     <UserIcon className="w-5 h-5 mr-2" aria-hidden="true" />
@@ -46,8 +50,9 @@ const SettingsDropdownMenu = () => {
                 {({ active }) => (
                   <button
                     className={`${
-                      active ? 'bg-violet-500 text-blue-500' : 'text-gray-900'
+                      active ? "bg-violet-500 text-blue-500" : "text-gray-900"
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                    onClick={logout}
                   >
                     <LogoutIcon className="w-5 h-5 mr-2" aria-hidden="true" />
                     Logout

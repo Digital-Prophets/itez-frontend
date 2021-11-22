@@ -10,13 +10,13 @@ type IMainProps = {
 };
 
 const Main = (props: IMainProps) => (
-  <div className="flex">
+  <div className="flex min-h-screen">
     {props.meta}
 
     <Sidebar />
     <div className="w-full">
       <Header />
-      <div className="h-full ">{props.children}</div>
+      {props.children}
 
       <Footer />
     </div>

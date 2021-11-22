@@ -6,9 +6,9 @@ const Index = () => {
   const router = useRouter();
   React.useEffect(() => {
     if (router.pathname === "/") {
-      router.push("/dashboard");
+      router.push("/user/login");
     } else {
-      router.push("/account/login");
+      router.push("/dashboard");
     }
   }, []);
   return App;

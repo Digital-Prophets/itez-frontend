@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }: Props) => {
   //Logout User
   const logout = async () => {
     console.log("logout");
-    router.push("/account/login");
+    router.push("/user/login");
   };
 
   //Check if user is logged in
