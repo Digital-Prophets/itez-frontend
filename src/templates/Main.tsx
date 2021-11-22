@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
-import Footer from '../components/Footer/Footer';
-import Header from '../components/Headers/Header';
-import Sidebar from '../components/SideBar/Sidebar';
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Headers/Header";
+import Sidebar from "../components/SideBar/Sidebar";
 
 type IMainProps = {
   meta: ReactNode;

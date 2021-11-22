@@ -1,16 +1,16 @@
-import React from 'react';
-
-import { useRouter } from 'next/router';
-
-import App from './_app';
+import { useRouter } from "next/router";
+import React from "react";
+import App from "./_app";
 
 const Index = () => {
   const router = useRouter();
-
   React.useEffect(() => {
-    router.push('/auth/login');
+    if (router.pathname === "/") {
+      router.push("/dashboard");
+    } else {
+      router.push("/account/login");
+    }
   }, []);
-
   return App;
 };
 

@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
-import { config } from "../config";
-import Spinner from "../components/Spinner";
+import { config } from "../../config";
+import Spinner from "../../components/Spinner";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 

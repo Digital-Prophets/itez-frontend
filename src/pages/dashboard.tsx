@@ -1,4 +1,4 @@
-import CardHeader from '../components/Headers/CardHeader';
+import CardHeader from "../components/Headers/CardHeader";
 
 export default function Dashboard() {
   return (

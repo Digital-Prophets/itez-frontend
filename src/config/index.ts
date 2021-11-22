@@ -1,7 +1,9 @@
-// Lets manage env vars dynamically and have them called from one place
+const NEXT_URL =
+  process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localhost:3000";
 
 const getEnvironmentVariable = (environmentVariable: string): string => {
-  const unvalidatedEnvironmentVariable = process.env[environmentVariable];
+  const unvalidatedEnvironmentVariable =
+    process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
   if (!unvalidatedEnvironmentVariable) {
     throw new Error(
       `Couldn't find environment variable: ${environmentVariable}`
@@ -12,5 +14,6 @@ const getEnvironmentVariable = (environmentVariable: string): string => {
 };
 
 export const config = {
-  ITEZ_API_URI: getEnvironmentVariable("ITEZ_API_URI")
+  ITEZ_API_URI: getEnvironmentVariable("NEXT_PUBLIC_API_URL"),
+  NEXT_URL: NEXT_URL,
 };

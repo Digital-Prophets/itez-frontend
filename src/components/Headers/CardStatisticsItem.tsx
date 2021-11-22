@@ -1,5 +1,3 @@
-import React from 'react';
-
 type IStatistics = {
   title: string;
   color: string;

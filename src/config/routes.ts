@@ -1,58 +1,58 @@
-import IRoutes from '../interfaces/routes';
-import Agents from '../pages/agents';
-import Beneficiary from '../pages/beneficiary/index';
-import Dashboard from '../pages/dashboard';
-import Location from '../pages/location';
-import Occupation from '../pages/occupation';
-import Users from '../pages/users';
+import IRoutes from "../interfaces/routes";
+import Agents from "../pages/agents";
+import Beneficiary from "../pages/beneficiary/index";
+import Dashboard from "../pages/dashboard";
+import Location from "../pages/location";
+import Occupation from "../pages/occupation";
+import Users from "../pages/users";
 
 const routes: IRoutes[] = [
   {
-    path: '/dashboard',
-    name: 'Dashboard Page',
+    path: "/dashboard",
+    name: "Dashboard Page",
     component: Dashboard,
     exact: true,
   },
   {
-    path: '/beneficiary/index',
-    name: 'Beneficiary Page',
+    path: "/beneficiary/index",
+    name: "Beneficiary Page",
     component: Beneficiary,
     exact: true,
   },
   {
-    path: '/location',
-    name: 'Location Page',
+    path: "/location",
+    name: "Location Page",
     component: Location,
     exact: true,
   },
   {
-    path: '/occuoation',
-    name: 'Occupation Page',
+    path: "/occuoation",
+    name: "Occupation Page",
     component: Occupation,
     exact: true,
   },
   {
-    path: '/agents',
-    name: 'Agents Page',
+    path: "/agents",
+    name: "Agents Page",
     component: Agents,
     exact: true,
   },
   {
-    path: '/users',
-    name: 'User Management Page',
+    path: "/users",
+    name: "User Management Page",
     component: Users,
     exact: true,
   },
   {
-    path: '/auth/login',
-    name: 'Login Page',
-    component: 'User Management Component',
+    path: "/auth/login",
+    name: "Login Page",
+    component: "User Management Component",
     exact: true,
   },
   {
-    path: '/auth/registration',
-    name: 'User Management Page',
-    component: 'User Management Component',
+    path: "/auth/registration",
+    name: "User Management Page",
+    component: "User Management Component",
     exact: true,
   },
 ];

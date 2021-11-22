@@ -1,6 +1,4 @@
-import React from 'react';
-
-import Registration from './auth/registration';
+import Registration from "./account/registration";
 
 export default function registration() {
   return (
