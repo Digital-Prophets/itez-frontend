@@ -1,7 +1,9 @@
-import { Fragment } from 'react';
+import { Fragment } from "react";
 
-import { Menu, Transition } from '@headlessui/react';
-import { LogoutIcon, UserIcon } from '@heroicons/react/outline';
+import Link from "next/link";
+
+import { Menu, Transition } from "@headlessui/react";
+import { LogoutIcon, UserIcon } from "@heroicons/react/outline";
 
 const SettingsDropdownMenu = () => {
   return (
@@ -11,7 +13,7 @@ const SettingsDropdownMenu = () => {
           <Menu.Button className="inline-flex justify-center w-full px-4 py-2 rounded-md ">
             <span className="flex flex-col ml-2 h-full">
               <span className="truncate w-30 text-black font-semibold tracking-wide leading-none">
-                Bupe Mulenga
+                Hello!.. Bupe Mulenga
               </span>
             </span>
           </Menu.Button>
@@ -27,18 +29,20 @@ const SettingsDropdownMenu = () => {
         >
           <Menu.Items className="absolute z-10 right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="px-1 py-1 ">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    className={`${
-                      active ? 'bg-violet-500 text-blue-500' : 'text-gray-900'
-                    } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-                  >
-                    <UserIcon className="w-5 h-5 mr-2" aria-hidden="true" />
-                    Profile
-                  </button>
-                )}
-              </Menu.Item>
+              <Link href="/userprofile/">
+                <Menu.Item>
+                  {({ active }) => (
+                    <button
+                      className={`${
+                        active ? "bg-violet-500 text-blue-500" : "text-gray-900"
+                      } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+                    >
+                      <UserIcon className="w-5 h-5 mr-2" aria-hidden="true" />
+                      Profile
+                    </button>
+                  )}
+                </Menu.Item>
+              </Link>
             </div>
 
             <div className="px-1 py-1">
@@ -46,7 +50,7 @@ const SettingsDropdownMenu = () => {
                 {({ active }) => (
                   <button
                     className={`${
-                      active ? 'bg-violet-500 text-blue-500' : 'text-gray-900'
+                      active ? "bg-violet-500 text-blue-500" : "text-gray-900"
                     } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
                   >
                     <LogoutIcon className="w-5 h-5 mr-2" aria-hidden="true" />
