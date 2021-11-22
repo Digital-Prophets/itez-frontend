@@ -4,7 +4,7 @@ export default function SpineArea() {
        
 
     const data = {
-      labels: ["", "", "", "", "", "", ""],
+      labels: ["Sunday", "Monday", "Tuesday", "Wenesday", "Thursday", "Friday", "Saturday"],
       datasets: [
         {
           label: "Yesterday",
@@ -25,7 +25,7 @@ export default function SpineArea() {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [15000, 3900, 3000000, 4100000, 800, 60, 500]
+          data: [15000, 3900, 3000, 4100, 800, 60, 500]
         },
         {
           label: "Today",
@@ -46,7 +46,28 @@ export default function SpineArea() {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: [1500, 3900000, 3000, 4100000, 2300, 1800000, 90]
+          data: [1500, 3900, 3000, 4100, 2300, 1800, 90]
+        },
+        {
+          label: "Others",
+          fill: false,
+          lineTension: 0.1,
+          backgroundColor: "#FFBC00",
+          borderColor: "#FFBC00",
+          borderCapStyle: "butt",
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: "miter",
+          pointBorderColor: "#FFBC00",
+          pointBackgroundColor: "#FFBC00",
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: "#FFBC00",
+          pointHoverBorderColor: "#FFBC00",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 10,
+          data: [1500, 3900, 30000, 418, 2300, 1800, 90]
         }
       ]
     };
@@ -99,7 +120,7 @@ export default function SpineArea() {
     };
     
       return (
-        <div>
+        <div className="shadow-lg bg-white m-2 p-4">
        <Line data={data} options={lineOptions} />
        </div>
         )

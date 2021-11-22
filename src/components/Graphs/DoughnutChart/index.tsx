@@ -3,17 +3,19 @@ import { Doughnut } from "react-chartjs-2";
 function PieChart() {
 
    const data = {
-        labels: ['Female', 'Male',],
+        labels: ['Female', 'Male','Others'],
         datasets: [{
            
-            data: [500, 300, 0],
+            data: [500, 300, 60],
             backgroundColor: [
                 '#C51350',
-                '#DDE3E9',   
+                '#DDE3E9',
+                '#FFBC00'   
             ],
             borderColor: [
                 '#C51350',
-                '#DDE3E9'
+                '#DDE3E9',
+                '#FFBC00'
             ],
             borderWidth: 1
         }]
@@ -22,7 +24,14 @@ function PieChart() {
     const options =  {
         responsive: true,
         maintainAspectRatio: false,
-        title: "Male vs female rate",
+        plugins: {
+            title: {
+                display: true,
+                text: 'Male,female and others rate',
+                align: 'start',
+              
+            }
+        },
         scales: {
             y: {
                 beginAtZero: true,
@@ -55,7 +64,7 @@ function PieChart() {
 
   return (
    
-  <div className="renderChart border-2 rounded-l m-2">
+  <div className="renderChart shadow-lg bg-white m-2">
    
  <div className="m-2" style={{height:350, marginBottom: 60}}>
  <Doughnut 
@@ -67,7 +76,7 @@ function PieChart() {
         
         />
     </div>
-    <div className="flex items-center justify-center mr-4 mb-4">
+    <div className="flex items-center justify-center mr-4 mb-4 pb-4">
         <div className="flex flex-row items-center">
         <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full uppercase last:mr-0 mr-1" style={{color: "#C51350", backgroundColor: "#DDE3E9"}}>
             190
@@ -79,6 +88,12 @@ function PieChart() {
             300
         </span>
             <label htmlFor="females" className="ml-2 text-sm font-normal text-gray-600">Females</label>
+        </div>
+        <div className="flex flex-row items-center ml-4">
+        <span className="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full uppercase last:mr-0 mr-1" style={{color: "#DDE3E9", backgroundColor: "#FFBC00"}}>
+            30
+        </span>
+            <label htmlFor="females" className="ml-2 text-sm font-normal text-gray-600">Others</label>
         </div>
     </div>
   </div>
