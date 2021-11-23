@@ -1,14 +1,17 @@
 import { LockClosedIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext, useState } from "react";
-
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { register } from "../../actions/authActions";
+/* import Spinner from "../../components/Spinner";
+import { RootState } from "../../reducers";useSelectoruseContext
+ */
 import mainLogo from "../../assets/undp-logo.png";
-import AuthContext from "../../context/authContext";
 
 export default function Registration() {
-  const { register } = useContext(AuthContext);
-
+  //const loading = useSelector((state: RootState) => state.auth.authLoading);
+  const dispatch = useDispatch();
   const [inputs, setInputs] = useState({
     firstName: "",
     lastName: "",
@@ -26,7 +29,10 @@ export default function Registration() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    register(inputs);
+    if (dispatch && dispatch !== null && dispatch !== undefined) {
+      dispatch(register(inputs));
+      console.log("Registration" + JSON.stringify(inputs));
+    }
   };
 
   return (
@@ -48,7 +54,7 @@ export default function Registration() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="firstName"
             >
-              First Name
+              First Name*
             </label>
             <input
               className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -64,7 +70,7 @@ export default function Registration() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="lastName"
             >
-              Last Name
+              Last Name*
             </label>
             <input
               className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
@@ -83,7 +89,7 @@ export default function Registration() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="email"
             >
-              Email
+              Email*
             </label>
             <input
               className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
@@ -99,7 +105,7 @@ export default function Registration() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="password"
             >
-              Password
+              Password*
             </label>
             <input
               className="shadow appearance-none border   w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
@@ -118,7 +124,7 @@ export default function Registration() {
                 className="block text-gray-700 text-sm font-bold mb-2"
                 htmlFor="email"
               >
-                User Role
+                User Role*
               </label>
               <input
                 className="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"

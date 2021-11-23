@@ -1,17 +1,18 @@
 import { NextPage } from "next";
 import useSWR from "swr";
+
 import Spinner from "../components/Spinner";
 import Pagination from "../components/Pagination";
-import WorkDetailTable from "../components/Beneficiary/WorkDetailTable";
-import { API_URL } from "../config";
+import BeneficiaryTable from "../components/Beneficiary/BeneficiaryTable";
+import { API_URL } from "../config/index";
 import { Main } from "../templates/Main";
 import { Meta } from "../layout/Meta";
 
 const dataFetcher = (url: string) => fetch(url).then((res) => res.json());
 
-function fetchWorkDetailData() {
+function fetchBeneficiaryData() {
   const BASE_URL = API_URL;
-  const { data, error } = useSWR(`${BASE_URL}/work_detail`, dataFetcher);
+  const { data, error } = useSWR(`${BASE_URL}/beneficiaries`, dataFetcher);
 
   return {
     data: data,
@@ -20,20 +21,20 @@ function fetchWorkDetailData() {
   };
 }
 
-const WorkDetails: NextPage = () => {
-  const { data, isLoading } = fetchWorkDetailData();
+const BeneficiaryList: NextPage = () => {
+  const { data, isLoading } = fetchBeneficiaryData();
 
   return (
     <>
-      <Main meta={Meta}>
+      <Main meta={<Meta title="ITEZ" description="" />}>
         <div className="flex pt-4 pl-4 justify-between">
           <div className="flex">
-            <h1 className="font-bold text-2xl text-gray-700">Occupation</h1>
+            <h1 className="font-bold text-2xl text-gray-700">Beneficiaries</h1>
           </div>
 
           <div className="flex space-x-4 text-gray-400 mr-3">
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-8 rounded">
-              Add Details
+              Add Beneficiary
             </button>
           </div>
         </div>
@@ -45,7 +46,7 @@ const WorkDetails: NextPage = () => {
                   {isLoading ? (
                     <Spinner />
                   ) : data ? (
-                    <WorkDetailTable data={data} />
+                    <BeneficiaryTable data={data} />
                   ) : (
                     <h2 className="font-bold">
                       An Error occured while fetching data.
@@ -62,4 +63,4 @@ const WorkDetails: NextPage = () => {
   );
 };
 
-export default WorkDetails;
+export default BeneficiaryList;

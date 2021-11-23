@@ -23,4 +23,5 @@ export interface IUserState {
   token: string | null;
   isAuthenticated: boolean;
   authLoading: boolean;
+  register_success: boolean;
 }

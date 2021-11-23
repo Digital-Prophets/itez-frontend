@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Link from 'next/link'
 
-import { Props } from '../../types/beneficiary';
+import { Props } from '../../interfaces/beneficiary';
 
 
 const BeneficiaryTable: NextPage<Props> = ({ data }) => {

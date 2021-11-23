@@ -1,7 +1,7 @@
-const NEXT_URL =
-  process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localhost:3000";
+export const API_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
-const getEnvironmentVariable = (environmentVariable: string): string => {
+/* const getEnvironmentVariable = (environmentVariable: string): string => {
   const unvalidatedEnvironmentVariable =
     process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
   if (!unvalidatedEnvironmentVariable) {
@@ -16,4 +16,4 @@ const getEnvironmentVariable = (environmentVariable: string): string => {
 export const config = {
   ITEZ_API_URI: getEnvironmentVariable("NEXT_PUBLIC_API_URL"),
   NEXT_URL: NEXT_URL,
-};
+}; */

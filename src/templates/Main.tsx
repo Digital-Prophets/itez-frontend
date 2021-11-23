@@ -10,7 +10,7 @@ type IMainProps = {
 };
 
 const Main = (props: IMainProps) => (
-  <div className="flex min-h-screen">
+  <div className="grad flex min-h-screen">
     {props.meta}
 
     <Sidebar />
