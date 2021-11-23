@@ -7,7 +7,7 @@ export default function SpineArea() {
       labels: ["Sunday", "Monday", "Tuesday", "Wenesday", "Thursday", "Friday", "Saturday"],
       datasets: [
         {
-          label: "Yesterday",
+          label: "Males",
           fill: false,
           lineTension: 0.1,
           backgroundColor: "rgba(75,192,192,0.4)",
@@ -28,7 +28,7 @@ export default function SpineArea() {
           data: [15000, 3900, 3000, 4100, 800, 60, 500]
         },
         {
-          label: "Today",
+          label: "Females",
           fill: false,
           lineTension: 0.1,
           backgroundColor: "red",
