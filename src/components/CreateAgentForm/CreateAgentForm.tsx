@@ -77,6 +77,7 @@ const CreateAgentForm = (prop: any) => {
                     id="first_name"
                     value={first_name}
                     onChange={onChange}
+                    required
                   />
                 </div>
 
@@ -90,6 +91,7 @@ const CreateAgentForm = (prop: any) => {
                     id="last_name"
                     value={last_name}
                     onChange={onChange}
+                    required
                   />
                 </div>
               </div>
@@ -103,8 +105,8 @@ const CreateAgentForm = (prop: any) => {
                     className="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
                     type="date"
                     id="birthday"
-                    value={birthday}
                     onChange={onChange}
+                    required
                   />
                 </div>
 
