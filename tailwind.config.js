@@ -71,6 +71,7 @@ module.exports = {
       secondary: "#ffed4a",
 
       danger: "#e3342f",
+      hideBg: "rgba(0,0,0,0.2)",
     }),
   },
 
