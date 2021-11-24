@@ -12,9 +12,8 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 const AgentsPage = () => {
   const [buttonPopup, SetButtonPopup] = useState(false);
 
-  // const BASE_URL = config.ITEZ_API_URI;
-  // const { data, error } = useSWR(`${BASE_URL}/agents`, fetcher);
-  const { data, error } = useSWR("http://localhost:8000/api/agents/", fetcher);
+  const BASE_URL = config.ITEZ_API_URI;
+  const { data, error } = useSWR(`${BASE_URL}/agents`, fetcher);
 
   if (error)
     return (

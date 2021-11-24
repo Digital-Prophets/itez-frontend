@@ -5,7 +5,7 @@ import axios from "axios";
 const DefaultFormData = {
   first_name: "",
   last_name: "",
-  birthday: new Date(2015, 3, 25),
+  birthday: Date(),
   gender: "",
   location: "",
 };
@@ -64,9 +64,9 @@ const CreateAgentForm = (prop: any) => {
           </div>
 
           <form onSubmit={onSubmit} action="">
-            <h6>User information</h6>
+            <h6 className="text-xl font-bold">User information</h6>
             <div className="row p-4">
-              <div className="col flex my-6">
+              <div className="col flex my-8">
                 <div className="formGroup flex flex-col w-2/4 mr-4">
                   <label htmlFor="" className="">
                     First Name
@@ -96,8 +96,8 @@ const CreateAgentForm = (prop: any) => {
                 </div>
               </div>
 
-              <div className="col flex">
-                <div className="formGroup flex flex-col w-2/4 ml-4">
+              <div className="col flex my-8 ">
+                <div className="formGroup flex flex-col w-2/4 mr-4">
                   <label htmlFor="" className="">
                     Birthday
                   </label>
@@ -105,17 +105,17 @@ const CreateAgentForm = (prop: any) => {
                     className="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
                     type="date"
                     id="birthday"
+                    value={birthday}
                     onChange={onChange}
                     required
                   />
                 </div>
-
-                <div className="formGroup flex flex-col w-2/4 mr-4">
+                <div className="formGroup flex flex-col w-2/4 ml-4">
                   <label htmlFor="" className="">
                     Select Gender
                   </label>
                   <select
-                    className="rounded overflow-hidden shadow-lg border w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="bg-white rounded overflow-hidden shadow-lg border w-full py-2 px-3 font-light text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     id="gender"
                     value={gender}
                     onChange={onChangeSelect}
@@ -130,8 +130,9 @@ const CreateAgentForm = (prop: any) => {
                     <option value="Other">Other</option>
                   </select>
                 </div>
-
-                <div className="formGroup flex flex-col w-2/4 ml-4">
+              </div>
+              <div className="col flex my-8 ">
+                <div className="formGroup flex flex-col w-2/4 mr-4 pr-4">
                   <label htmlFor="" className="">
                     Location
                   </label>
@@ -146,7 +147,7 @@ const CreateAgentForm = (prop: any) => {
               </div>
             </div>
             <div className="flex justify-center">
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold text-xs py-2 p-4 rounded">
+              <button className=" w-full bg-blue-500 hover:bg-blue-700 text-white font-bold text-xs py-2 p-4 rounded">
                 Submit
               </button>
             </div>
