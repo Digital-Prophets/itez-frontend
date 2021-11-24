@@ -47,10 +47,7 @@ const AgentsPage = () => {
                 <CreateAgentForm
                   trigger={buttonPopup}
                   setTrigger={SetButtonPopup}
-                >
-                  {" "}
-                  my popup
-                </CreateAgentForm>
+                ></CreateAgentForm>
               </div>
             </div>
           </div>
