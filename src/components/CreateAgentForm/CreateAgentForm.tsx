@@ -41,6 +41,7 @@ const CreateAgentForm = (prop: any) => {
         last_name: formData.last_name,
         birthdate: formData.birthday,
         gender: formData.gender,
+        location: formData.location,
       },
     }).then((res) => {
       console.log(res.data);
