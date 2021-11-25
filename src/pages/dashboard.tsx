@@ -1,5 +1,5 @@
 import CardHeader from "../components/Headers/CardHeader";
-import Layout from "../layout/Layout";
+
 import { Meta } from "../layout/Meta";
 import { Main } from "../templates/Main";
 

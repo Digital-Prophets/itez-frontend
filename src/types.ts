@@ -1,5 +1,3 @@
-import { USER_REGISTER_SUCCESS } from "./types/authTypes";
-
 export interface Props {
   data: QueriedData;
 }
@@ -75,5 +73,3 @@ export interface ParentDetails {
   mother_village: string | null;
   created: Date;
 }
-
-

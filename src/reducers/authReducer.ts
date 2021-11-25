@@ -4,13 +4,15 @@ import {
   USER_REGISTER_SUCCESS,
   AUTH_LOADING,
   AUTH_LOADED,
+  USER_LOGIN_FAILURE,
+  USER_LOGIN_SUCCESS,
+  RESET_USER_REGISTER_SUCCESS,
 } from "../types/authTypes";
 
 const initialState: IUserState = {
   user: null,
   isAuthenticated: false,
   authLoading: false,
-  token: null,
   register_success: false,
 };
 
@@ -29,6 +31,23 @@ const authReducer = (
         ...state,
         register_success: false,
       };
+    case RESET_USER_REGISTER_SUCCESS:
+      return {
+        ...state,
+        register_success: false,
+      };
+    case USER_LOGIN_SUCCESS:
+      return {
+        ...state,
+        isAuthenticated: true,
+      };
+    case USER_LOGIN_FAILURE:
+      return {
+        ...state,
+        isAuthenticated: false,
+        user: null,
+      };
+
     case AUTH_LOADING:
       return {
         ...state,

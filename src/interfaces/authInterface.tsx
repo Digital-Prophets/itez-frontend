@@ -11,16 +11,15 @@ export interface ILogin {
 }
 
 export interface IRegister {
-  firstName: string;
-  lastName: string;
   email: string;
-  phoneNumer?: string;
-  userRole: number;
+  username: string;
+  name: string;
+  password: string;
+  roles: string[] | string;
 }
 
 export interface IUserState {
   user: IUser | null;
-  token: string | null;
   isAuthenticated: boolean;
   authLoading: boolean;
   register_success: boolean;

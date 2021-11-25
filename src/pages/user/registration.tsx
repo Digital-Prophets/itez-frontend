@@ -6,26 +6,25 @@ import { useDispatch } from "react-redux";
 import { register } from "../../actions/authActions";
 /* import Spinner from "../../components/Spinner";
 import { RootState } from "../../reducers";useSelectoruseContext
- */
-import mainLogo from "../../assets/undp-logo.png";
+ */ /* 
+import mainLogo from "../../assets/undp-logo.png"; */
 
 export default function Registration() {
   //const loading = useSelector((state: RootState) => state.auth.authLoading);
   const dispatch = useDispatch();
   const [inputs, setInputs] = useState({
-    firstName: "",
-    lastName: "",
     email: "",
+    username: "",
+    name: "",
     password: "",
-    phoneNumber: "",
-    userRole: 0,
+    roles: [],
   });
 
   const changeHandler = (e: any) =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
 
-  const changeRole = (e: any) =>
-    setInputs({ ...inputs, userRole: +e.target.value });
+  /* const changeRole = (e: any) =>
+    setInputs({ ...inputs, userRole: +e.target.value }); */
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -39,9 +38,9 @@ export default function Registration() {
     <div className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ">
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-2 justify-center">
         <div className="mb-6">
-          <div className="flex justify-center">
+          {/*   <div className="flex justify-center">
             <Image className="object-contain" src={mainLogo} alt="Main Logo" />
-          </div>
+          </div> */}
 
           <h6 className="mt-6 text-center text-3xl font-bold text-gray-900">
             Register Account
@@ -54,15 +53,15 @@ export default function Registration() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="firstName"
             >
-              First Name*
+              Name
             </label>
             <input
               className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="firstname"
+              id="name"
               type="text"
-              name="firstName"
+              name="name"
               onChange={changeHandler}
-              placeholder="First Name"
+              placeholder="Name"
             />
           </div>
           <div className="mt-5 mb-5">
@@ -70,15 +69,15 @@ export default function Registration() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="lastName"
             >
-              Last Name*
+              Username*
             </label>
             <input
               className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
-              id="lastname"
+              id="username"
               type="text"
-              name="lastName"
+              name="username"
               onChange={changeHandler}
-              placeholder="Last Name"
+              placeholder="Username"
             />
           </div>
         </div>
@@ -130,8 +129,7 @@ export default function Registration() {
                 className="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
                 id="role"
                 type="text"
-                name="userRole"
-                onChange={changeRole}
+                name="roles"
                 placeholder="User Role"
               />
             </div>

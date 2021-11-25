@@ -1,32 +1,35 @@
+import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
-import { API_URL } from "../../../config/index";
+import { config } from "../../../config/index";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
-    const { first_name, last_name, email, password, userRole } = req.body;
+    const { email, username, name, password, roles } = req.body;
 
     const body = JSON.stringify({
-      first_name,
-      last_name,
       email,
+      username,
+      name,
       password,
-      userRole,
+      roles,
     });
 
     try {
-      const apiRes = await fetch(`${API_URL}/api/user/`, {
+      const apiRes = await axios.post(`${config.ITEZ_API_URI}/api/users/`, {
         method: "POST",
         headers: {
+          Accept: "application/json",
+
           "Content-Type": "application/json",
         },
         body: body,
       });
 
-      const data = await apiRes.json();
+      const data = await apiRes.data();
 
-      if (apiRes.status === 200) {
+      if (apiRes.status === 201) {
         //@todo - SetCookie
-        return res.status(200).json({ success: data.success });
+        return res.status(201).json({ success: data.success });
       } else {
         return res.status(apiRes.status).json({
           error: data.error,

@@ -10,9 +10,9 @@ import {
   IoMdBookmarks,
 } from "react-icons/io";
 import { MdLocationPin, MdHomeWork, MdSettings } from "react-icons/md";
-import sidebarlogo from "../../assets/undp-logo-side.png";
+/* import sidebarlogo from "../../assets/undp-logo-side.png";
 import Image from "next/image";
-
+ */
 const Sidebar = () => (
   <IconContext.Provider
     value={{
@@ -21,10 +21,10 @@ const Sidebar = () => (
     }}
   >
     <div className=" top-0 left-0 sticky w-80 m-0 inline-flex flex-col bg-primary text-black shadow-lg ">
-      <i>
+      {/*  <i>
         {""}
         <Image className="" src={sidebarlogo} alt="UNDP Logo" />
-      </i>
+      </i> */}
 
       <ul className="px-10 pt-4 text-base text-black">
         <Link href="/dashboard">

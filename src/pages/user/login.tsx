@@ -1,18 +1,39 @@
 import { LockOpenIcon } from "@heroicons/react/outline";
-import { useContext, useState } from "react";
-import AuthContext from "../../context/authContext";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { login, reset_register_success } from "../../actions/authActions";
+import { RootState } from "../../reducers";
+import Spinner from "../../components/Spinner";
+import { useRouter } from "next/router";
 
 export default function Login() {
-  const { login } = useContext(AuthContext);
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.auth.isAuthenticated
+  );
+  const loading = useSelector((state: RootState) => state.auth.authLoading);
 
   const [loginInputs, setLoginInputs] = useState({
     username: "",
     password: "",
   });
+
+  useEffect(() => {
+    if (dispatch && dispatch !== null && dispatch !== undefined)
+      dispatch(reset_register_success());
+  }, [dispatch]);
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    login(loginInputs);
+    if (dispatch && dispatch !== null && dispatch !== undefined) {
+      dispatch(login(loginInputs));
+    }
   };
+
+  if (typeof window !== "undefined" && isAuthenticated && !loading)
+    router.push("/dashboard");
+
   const changeHandler = (e: any) =>
     setLoginInputs({ ...loginInputs, [e.target.name]: e.target.value });
 
@@ -20,9 +41,6 @@ export default function Login() {
     <div className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 ">
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-2 justify-center">
         <div className="mb-6">
-          {/* <div className="flex justify-center">
-            <Image className="object-contain" src={mainLogo} alt="Main Logo" />
-          </div> */}
           <h6 className="mt-4 text-center text-3xl font-bold text-gray-900">
             Login
           </h6>
@@ -34,14 +52,14 @@ export default function Login() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="username"
             >
-              Email
+              Username
             </label>
             <input
               className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
-              id="email"
-              type="email"
+              id="username"
+              type="username"
               name="username"
-              placeholder="Email"
+              placeholder="Username"
               onChange={changeHandler}
             />
           </div>
@@ -63,19 +81,23 @@ export default function Login() {
           </div>
         </div>
         <div>
-          <button
-            type="submit"
-            onClick={handleSubmit}
-            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-          >
-            <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-              <LockOpenIcon
-                className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
-                aria-hidden="true"
-              />
-            </span>
-            Login
-          </button>
+          {loading ? (
+            <Spinner />
+          ) : (
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              <span className="absolute left-0 inset-y-0 flex items-center pl-3">
+                <LockOpenIcon
+                  className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
+                  aria-hidden="true"
+                />
+              </span>
+              Login
+            </button>
+          )}
         </div>
       </form>
     </div>

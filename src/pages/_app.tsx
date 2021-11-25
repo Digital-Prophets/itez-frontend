@@ -3,8 +3,6 @@ import type { NextPage } from "next";
 import { AppProps } from "next/app";
 
 import "../styles/main.css";
-import { Meta } from "../layout/Meta";
-import { Main } from "../templates/Main";
 import { Provider } from "react-redux";
 import { useStore } from "../store";
 
