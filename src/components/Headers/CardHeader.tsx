@@ -1,8 +1,14 @@
-import { IoMdWoman, IoMdPeople, IoMdMan, IoMdAlbums } from 'react-icons/io';
+import { IoMdWoman, IoMdPeople, IoMdMan, IoMdAlbums } from "react-icons/io";
 
-import CardStatisticsItem from './CardStatisticsItem';
+import fetchData from "../../utils/fetcherHelper";
+
+import CardStatisticsItem from "./CardStatisticsItem";
+
 
 const CardHeader = () => {
+  const { data, isLoading, isError } = fetchData('beneficiaries');
+  console.log(data, isLoading, isError);
+
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6">

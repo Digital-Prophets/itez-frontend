@@ -1,18 +1,27 @@
 import { NextPage } from "next";
 import useSWR from "swr";
 
-import Spinner from "../components/Spinner";
-import Pagination from "../components/Pagination";
-import BeneficiaryTable from "../components/Beneficiary/BeneficiaryTable";
-import { API_URL } from "../config/index";
-import { Main } from "../templates/Main";
-import { Meta } from "../layout/Meta";
+import Spinner from "../../components/Spinner";
+import Pagination from "../../components/Pagination";
+import BeneficiaryTable from "../../components/Beneficiary/BeneficiaryTable";
+import { ITEZ_API_URI } from "../../config/index";
+import { Main } from "../../templates/Main";
+import { Meta } from "../../layout/Meta";
 
-const dataFetcher = (url: string) => fetch(url).then((res) => res.json());
+const dataFetcher = (url: string) =>
+  fetch(url, {
+    headers: {
+      // add bearer token to the header
+      Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjM3OTI4NTU0LCJpYXQiOjE2Mzc5MjQ5NTQsImp0aSI6IjMzYTRlMjk1ZDg5MjRkN2E4YzljNTdkNjU1ZjA4NDJhIiwidXNlcl9pZCI6MX0.EuBuW5M-tddOJgXnbyzWi9IY26JH4jyrEn5XRlHB2y4`,
+    },
+  }).then((res) => res.json());
 
 function fetchBeneficiaryData() {
-  const BASE_URL = API_URL;
-  const { data, error } = useSWR(`${BASE_URL}/beneficiaries`, dataFetcher);
+  const BASE_URL = ITEZ_API_URI;
+  const { data, error } = useSWR(
+    `http://localhost:8000/api/beneficiarie/`,
+    dataFetcher
+  );
 
   return {
     data: data,
@@ -23,6 +32,7 @@ function fetchBeneficiaryData() {
 
 const BeneficiaryList: NextPage = () => {
   const { data, isLoading } = fetchBeneficiaryData();
+  console.log(JSON.stringify(data));
 
   return (
     <>

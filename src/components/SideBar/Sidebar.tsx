@@ -34,7 +34,7 @@ const Sidebar = () => (
           </li>
         </Link>
 
-        <Link href="/beneficiary">
+        <Link href="/beneficiaries">
           <li className="cursor-pointer my-6 flex items-center">
             <IoIosPeople />
             Beneficiary

@@ -1,5 +1,6 @@
 import axios from "axios";
-import { ILogin, IRegister } from "../interfaces/authInterface";
+import { ITEZ_API_URI } from "../config";
+import { ICreateUser, ILogin } from "../interfaces/authInterface";
 import {
   USER_REGISTER_FAILURE,
   USER_REGISTER_SUCCESS,
@@ -8,16 +9,18 @@ import {
   USER_LOGIN_SUCCESS,
   USER_LOGIN_FAILURE,
   RESET_USER_REGISTER_SUCCESS,
-} from "../types/authTypes";
+} from "../types/actionTypes";
+import makeToast from "../utils/Toaster";
+import router from "next/router";
 
-export const register = (user: IRegister) => async (dispatch: any) => {
+export const register = (user: ICreateUser) => async (dispatch: any) => {
   dispatch({
     type: AUTH_LOADING,
   });
 
   try {
-    let body = JSON.stringify(user);
-    let res = await axios.post(`/api/account/register`, {
+    const body = JSON.stringify(user);
+    const res = await axios.post(`${ITEZ_API_URI}/register/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -26,12 +29,12 @@ export const register = (user: IRegister) => async (dispatch: any) => {
       body: body,
     });
 
-    console.log("Registration Payload" + JSON.stringify(body));
-
     if (res.status === 201) {
       dispatch({
         type: USER_REGISTER_SUCCESS,
       });
+      makeToast("success", "Registeration Success");
+      router.push("/user/login");
     } else {
       dispatch({
         type: USER_REGISTER_FAILURE,
@@ -55,27 +58,28 @@ export const reset_register_success = () => (dispatch: any) => {
 };
 
 export const login = (user: ILogin) => async (dispatch: any) => {
+  const body = JSON.stringify(user);
   dispatch({
     type: AUTH_LOADING,
   });
-  console.log("Login body from actions" + JSON.stringify(user));
+
   try {
-    console.log("Try catch hit");
-    let body = JSON.stringify(user);
-    let res = await fetch(`/api/account/login`, {
+    const res = await fetch(`${ITEZ_API_URI}/login/`, {
       method: "POST",
       headers: {
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: body,
     });
-
-    console.log("Res from actions" + JSON.stringify(body));
+    console.log("Res status" + res.status);
 
     if (res.status === 200) {
+      console.log("Login Success");
       dispatch({
         type: USER_LOGIN_SUCCESS,
       });
+      makeToast("success", "Login Success");
     } else {
       dispatch({
         type: USER_LOGIN_FAILURE,

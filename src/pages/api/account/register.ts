@@ -1,25 +1,23 @@
 import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
-import { config } from "../../../config/index";
+import { ITEZ_API_URI } from "../../../config/index";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === "POST") {
-    const { email, username, name, password, roles } = req.body;
+    const { username, email, password, is_active } = req.body;
 
     const body = JSON.stringify({
-      email,
       username,
-      name,
+      email,
       password,
-      roles,
+      is_active,
     });
 
     try {
-      const apiRes = await axios.post(`${config.ITEZ_API_URI}/api/users/`, {
+      const apiRes = await axios.post(`${ITEZ_API_URI}/register/`, {
         method: "POST",
         headers: {
           Accept: "application/json",
-
           "Content-Type": "application/json",
         },
         body: body,

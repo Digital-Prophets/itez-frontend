@@ -1,6 +1,7 @@
 import { LockClosedIcon } from "@heroicons/react/outline";
 import Image from "next/image";
 import Link from "next/link";
+import router from "next/router";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { register } from "../../actions/authActions";
@@ -13,24 +14,19 @@ export default function Registration() {
   //const loading = useSelector((state: RootState) => state.auth.authLoading);
   const dispatch = useDispatch();
   const [inputs, setInputs] = useState({
-    email: "",
     username: "",
-    name: "",
     password: "",
-    roles: [],
+    email: "",
+    is_active: true,
   });
 
   const changeHandler = (e: any) =>
     setInputs({ ...inputs, [e.target.name]: e.target.value });
 
-  /* const changeRole = (e: any) =>
-    setInputs({ ...inputs, userRole: +e.target.value }); */
-
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (dispatch && dispatch !== null && dispatch !== undefined) {
       dispatch(register(inputs));
-      console.log("Registration" + JSON.stringify(inputs));
     }
   };
 
@@ -53,17 +49,36 @@ export default function Registration() {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="firstName"
             >
-              Name
+              Email*
             </label>
             <input
               className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="name"
+              id="email"
               type="text"
-              name="name"
+              name="email"
               onChange={changeHandler}
-              placeholder="Name"
+              placeholder="Email"
             />
           </div>
+          <div className="mt-5 mb-5">
+            <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="firstName"
+            >
+              Password*
+            </label>
+            <input
+              className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="password"
+              type="password"
+              name="password"
+              onChange={changeHandler}
+              placeholder="Password"
+            />
+          </div>
+        </div>
+
+        <div className="grid gap-4 grid-row">
           <div className="mt-5 mb-5">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -82,76 +97,6 @@ export default function Registration() {
           </div>
         </div>
 
-        <div className="grid gap-4 grid-cols-2">
-          <div className="mb-2">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="email"
-            >
-              Email*
-            </label>
-            <input
-              className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
-              id="email"
-              type="text"
-              name="email"
-              onChange={changeHandler}
-              placeholder="Email"
-            />
-          </div>
-          <div className="mb-2">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="password"
-            >
-              Password*
-            </label>
-            <input
-              className="shadow appearance-none border   w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
-              id="password"
-              type="password"
-              name="password"
-              onChange={changeHandler}
-              placeholder="Password"
-            />
-          </div>
-        </div>
-        <div>
-          <div className="grid gap-4 grid-cols-2">
-            <div className="mb-2">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="email"
-              >
-                User Role*
-              </label>
-              <input
-                className="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
-                id="role"
-                type="text"
-                name="roles"
-                placeholder="User Role"
-              />
-            </div>
-            <div className="mb-2">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="phoneNumber"
-              >
-                Phone Number
-              </label>
-              <input
-                className="shadow appearance-none border w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:bg-white"
-                id="phoneNumber"
-                type="text"
-                name="phoneNumber"
-                onChange={changeHandler}
-                placeholder="Phone Number"
-              />
-            </div>
-          </div>
-        </div>
-
         <div>
           <button
             type="submit"
@@ -167,7 +112,7 @@ export default function Registration() {
             Create Account
           </button>
           <p className="mt-2">
-            Already have an account? <Link href="/account/login">Login</Link>
+            Already have an account? <Link href="/user/login">Login</Link>
           </p>
         </div>
       </form>

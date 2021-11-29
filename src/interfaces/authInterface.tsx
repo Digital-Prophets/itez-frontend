@@ -18,6 +18,13 @@ export interface IRegister {
   roles: string[] | string;
 }
 
+export interface ICreateUser {
+  username: string;
+  password: string;
+  email: string;
+  is_active: boolean;
+}
+
 export interface IUserState {
   user: IUser | null;
   isAuthenticated: boolean;

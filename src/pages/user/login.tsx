@@ -5,6 +5,7 @@ import { login, reset_register_success } from "../../actions/authActions";
 import { RootState } from "../../reducers";
 import Spinner from "../../components/Spinner";
 import { useRouter } from "next/router";
+import makeToast from "../../utils/Toaster";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -26,13 +27,20 @@ export default function Login() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    if (dispatch && dispatch !== null && dispatch !== undefined) {
+    if (!loginInputs.username || !loginInputs.password) {
+      makeToast("warning", "Please enter both fields");
+      return;
+    } else if (dispatch && dispatch !== null && dispatch !== undefined) {
       dispatch(login(loginInputs));
+    } else {
+      makeToast("warning", "Something went wrong");
     }
   };
 
-  if (typeof window !== "undefined" && isAuthenticated && !loading)
+  if (typeof window !== "undefined" && isAuthenticated && !loading) {
     router.push("/dashboard");
+    makeToast("success", "You are logged in");
+  }
 
   const changeHandler = (e: any) =>
     setLoginInputs({ ...loginInputs, [e.target.name]: e.target.value });

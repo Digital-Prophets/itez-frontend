@@ -1,6 +1,6 @@
 import IRoutes from "../interfaces/routes";
 import Agents from "../pages/agents";
-import Beneficiary from "../pages/beneficiary";
+import Beneficiary from "../pages/beneficiaries";
 import Dashboard from "../pages/dashboard";
 import Location from "../pages/location";
 import Occupation from "../pages/occupation";

@@ -7,7 +7,7 @@ import {
   USER_LOGIN_FAILURE,
   USER_LOGIN_SUCCESS,
   RESET_USER_REGISTER_SUCCESS,
-} from "../types/authTypes";
+} from "../types/actionTypes";
 
 const initialState: IUserState = {
   user: null,
