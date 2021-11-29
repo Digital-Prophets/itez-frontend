@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
-import Footer from '../components/Footer/Footer';
-import Header from '../components/Headers/Header';
-import Sidebar from '../components/SideBar/Sidebar';
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Headers/Header";
+import Sidebar from "../components/SideBar/Sidebar";
 
 type IMainProps = {
   meta: ReactNode;
@@ -10,13 +10,13 @@ type IMainProps = {
 };
 
 const Main = (props: IMainProps) => (
-  <div className="flex">
+  <div className="grad flex min-h-screen">
     {props.meta}
 
     <Sidebar />
     <div className="w-full">
       <Header />
-      <div className="h-full ">{props.children}</div>
+      {props.children}
 
       <Footer />
     </div>

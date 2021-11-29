@@ -1,4 +1,4 @@
-import Registration from './auth/registration';
+import Registration from "./user/registration";
 
 export default function registration() {
   return (

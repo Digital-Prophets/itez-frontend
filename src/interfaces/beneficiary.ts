@@ -5,10 +5,10 @@ interface QueriedData {
   count: number;
   next: string;
   previous: string | null;
-  results: Beneficiary[];
+  results: IBeneficiary[];
 }
 
-export interface Beneficiary {
+export interface IBeneficiary {
   id: number;
   first_name: string;
   last_name: string;
@@ -25,11 +25,16 @@ export interface Beneficiary {
   number_of_siblings: number | null;
   education_level: string | null;
   created: Date;
-  agent_ID: Agent;
-  parent_details: ParentDetails;
+  agent_ID: IAgent;
+  parent_details: IParentDetails;
 }
 
-export interface Agent {
+export interface IBeneficiaryState {
+  beneficiaries: IBeneficiary | null;
+  beneficiaryLoading: boolean;
+}
+
+export interface IAgent {
   id: number;
   first_name: string;
   last_name: string;
@@ -39,7 +44,7 @@ export interface Agent {
   location: string;
 }
 
-export interface ParentDetails {
+export interface IParentDetails {
   id: number;
   father_first_name: string;
   father_last_name: string;
